@@ -5,8 +5,17 @@
 //  Created by 魏帅 on 2017/12/1.
 //  Copyright © 2017年 魏帅. All rights reserved.
 //
-
+/*
+ 
+ 项目：导游通
+ 日期：2017-08-22
+ 版本：2
+ 描述：
+ 修改：Appdelegate.m
+ 
+ */
 #import "AppDelegate.h"
+#import "BaseTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +25,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //登录界面
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    self.window.rootViewController = [[BaseTabBarController alloc] init];
     return YES;
 }
 
