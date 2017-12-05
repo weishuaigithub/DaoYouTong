@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A77676B71FD53C14003DE9F8 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676B51FD53C14003DE9F8 /* BaseView.m */; };
-		A77676BB1FD53C42003DE9F8 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676B91FD53C42003DE9F8 /* BaseModel.m */; };
 		A77676CB1FD53C50003DE9F8 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676BE1FD53C50003DE9F8 /* BaseViewController.m */; };
 		A77676CC1FD53C50003DE9F8 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676C01FD53C50003DE9F8 /* BaseTabBarController.m */; };
 		A77676CD1FD53C50003DE9F8 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676C31FD53C50003DE9F8 /* NewsViewController.m */; };
@@ -32,6 +30,8 @@
 		A77676F21FD53C5A003DE9F8 /* My_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A77676E21FD53C59003DE9F8 /* My_check@2x.png */; };
 		A77676F31FD53C5A003DE9F8 /* Detail_uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = A77676E31FD53C59003DE9F8 /* Detail_uncheck.png */; };
 		A77676F91FD53C69003DE9F8 /* UIColor+ColorChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676F71FD53C69003DE9F8 /* UIColor+ColorChange.m */; };
+		A776770A1FD54931003DE9F8 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77677091FD54931003DE9F8 /* HomeView.m */; };
+		A77677101FD54B48003DE9F8 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A776770F1FD54B48003DE9F8 /* BaseView.m */; };
 		A7D982AE1FD0DE660046CDC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D982AD1FD0DE660046CDC6 /* AppDelegate.m */; };
 		A7D982B11FD0DE660046CDC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D982B01FD0DE660046CDC6 /* ViewController.m */; };
 		A7D982B41FD0DE660046CDC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D982B21FD0DE660046CDC6 /* Main.storyboard */; };
@@ -60,10 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A77676B51FD53C14003DE9F8 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
-		A77676B61FD53C14003DE9F8 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
-		A77676B91FD53C42003DE9F8 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
-		A77676BA1FD53C42003DE9F8 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		A77676BE1FD53C50003DE9F8 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A77676BF1FD53C50003DE9F8 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
 		A77676C01FD53C50003DE9F8 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
@@ -95,6 +91,10 @@
 		A77676F51FD53C69003DE9F8 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A77676F71FD53C69003DE9F8 /* UIColor+ColorChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorChange.m"; sourceTree = "<group>"; };
 		A77676F81FD53C69003DE9F8 /* UIColor+ColorChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorChange.h"; sourceTree = "<group>"; };
+		A77677081FD54931003DE9F8 /* HomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
+		A77677091FD54931003DE9F8 /* HomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
+		A776770E1FD54B48003DE9F8 /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		A776770F1FD54B48003DE9F8 /* BaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		A7D982A91FD0DE660046CDC6 /* DaoYouTong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaoYouTong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D982AC1FD0DE660046CDC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A7D982AD1FD0DE660046CDC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 		A77676B41FD53C14003DE9F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A77676B51FD53C14003DE9F8 /* BaseView.m */,
-				A77676B61FD53C14003DE9F8 /* BaseView.h */,
+				A77676FC1FD541F7003DE9F8 /* BaseView */,
+				A77676FB1FD541EB003DE9F8 /* ClassView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,8 +150,8 @@
 		A77676B81FD53C42003DE9F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A77676B91FD53C42003DE9F8 /* BaseModel.m */,
-				A77676BA1FD53C42003DE9F8 /* BaseModel.h */,
+				A77676FE1FD54220003DE9F8 /* ClassModel */,
+				A77676FD1FD54210003DE9F8 /* BaseModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,10 +168,10 @@
 		A77676BD1FD53C50003DE9F8 /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
+				A77676C11FD53C50003DE9F8 /* BaseViewController.h */,
 				A77676BE1FD53C50003DE9F8 /* BaseViewController.m */,
 				A77676BF1FD53C50003DE9F8 /* BaseTabBarController.h */,
 				A77676C01FD53C50003DE9F8 /* BaseTabBarController.m */,
-				A77676C11FD53C50003DE9F8 /* BaseViewController.h */,
 			);
 			path = BaseController;
 			sourceTree = "<group>";
@@ -179,13 +179,13 @@
 		A77676C21FD53C50003DE9F8 /* ClassController */ = {
 			isa = PBXGroup;
 			children = (
-				A77676C31FD53C50003DE9F8 /* NewsViewController.m */,
-				A77676C41FD53C50003DE9F8 /* HomeViewController.m */,
-				A77676C51FD53C50003DE9F8 /* DetailsViewController.h */,
-				A77676C61FD53C50003DE9F8 /* MyViewController.h */,
-				A77676C71FD53C50003DE9F8 /* NewsViewController.h */,
-				A77676C81FD53C50003DE9F8 /* DetailsViewController.m */,
 				A77676C91FD53C50003DE9F8 /* HomeViewController.h */,
+				A77676C41FD53C50003DE9F8 /* HomeViewController.m */,
+				A77676C71FD53C50003DE9F8 /* NewsViewController.h */,
+				A77676C31FD53C50003DE9F8 /* NewsViewController.m */,
+				A77676C51FD53C50003DE9F8 /* DetailsViewController.h */,
+				A77676C81FD53C50003DE9F8 /* DetailsViewController.m */,
+				A77676C61FD53C50003DE9F8 /* MyViewController.h */,
 				A77676CA1FD53C50003DE9F8 /* MyViewController.m */,
 			);
 			path = ClassController;
@@ -202,6 +202,7 @@
 		A77676D21FD53C59003DE9F8 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				A77676FA1FD54068003DE9F8 /* Weather */,
 				A77676D31FD53C59003DE9F8 /* TabBar */,
 			);
 			path = Image;
@@ -246,6 +247,77 @@
 				A77676F81FD53C69003DE9F8 /* UIColor+ColorChange.h */,
 			);
 			path = ThirdFrameWorkFile;
+			sourceTree = "<group>";
+		};
+		A77676FA1FD54068003DE9F8 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		A77676FB1FD541EB003DE9F8 /* ClassView */ = {
+			isa = PBXGroup;
+			children = (
+				A77677001FD54311003DE9F8 /* HomeView */,
+				A77677011FD54329003DE9F8 /* NewsView */,
+				A77677031FD54342003DE9F8 /* DeatilView */,
+				A77677041FD54353003DE9F8 /* MineView */,
+			);
+			path = ClassView;
+			sourceTree = "<group>";
+		};
+		A77676FC1FD541F7003DE9F8 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				A776770E1FD54B48003DE9F8 /* BaseView.h */,
+				A776770F1FD54B48003DE9F8 /* BaseView.m */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		A77676FD1FD54210003DE9F8 /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseModel;
+			sourceTree = "<group>";
+		};
+		A77676FE1FD54220003DE9F8 /* ClassModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ClassModel;
+			sourceTree = "<group>";
+		};
+		A77677001FD54311003DE9F8 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				A77677081FD54931003DE9F8 /* HomeView.h */,
+				A77677091FD54931003DE9F8 /* HomeView.m */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		A77677011FD54329003DE9F8 /* NewsView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewsView;
+			sourceTree = "<group>";
+		};
+		A77677031FD54342003DE9F8 /* DeatilView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeatilView;
+			sourceTree = "<group>";
+		};
+		A77677041FD54353003DE9F8 /* MineView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MineView;
 			sourceTree = "<group>";
 		};
 		A7D982A01FD0DE660046CDC6 = {
@@ -463,11 +535,11 @@
 				A77676CB1FD53C50003DE9F8 /* BaseViewController.m in Sources */,
 				A77676CD1FD53C50003DE9F8 /* NewsViewController.m in Sources */,
 				A7D982BC1FD0DE660046CDC6 /* main.m in Sources */,
+				A776770A1FD54931003DE9F8 /* HomeView.m in Sources */,
 				A77676CE1FD53C50003DE9F8 /* HomeViewController.m in Sources */,
 				A7D982AE1FD0DE660046CDC6 /* AppDelegate.m in Sources */,
 				A77676F91FD53C69003DE9F8 /* UIColor+ColorChange.m in Sources */,
-				A77676BB1FD53C42003DE9F8 /* BaseModel.m in Sources */,
-				A77676B71FD53C14003DE9F8 /* BaseView.m in Sources */,
+				A77677101FD54B48003DE9F8 /* BaseView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +705,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QF7UF8B3D3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/weishuai/Desktop/随身导游/DaoYouTong/DaoYouTong/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = DaoYouTong/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -650,6 +724,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QF7UF8B3D3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/weishuai/Desktop/随身导游/DaoYouTong/DaoYouTong/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = DaoYouTong/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -1,8 +1,8 @@
 //
 //  BaseView.h
-//  PrivateGuide
+//  DaoYouTong
 //
-//  Created by 魏帅 on 2017/8/22.
+//  Created by 魏帅 on 2017/12/4.
 //  Copyright © 2017年 魏帅. All rights reserved.
 //
 
