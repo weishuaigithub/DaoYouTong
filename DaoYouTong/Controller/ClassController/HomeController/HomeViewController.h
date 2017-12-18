@@ -1,26 +1,27 @@
 //
-//  BaseView.h
-//  DaoYouTong
+//  HomeViewController.h
+//  PrivateGuide
 //
-//  Created by 魏帅 on 2017/12/4.
+//  Created by 魏帅 on 2017/11/28.
 //  Copyright © 2017年 魏帅. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface BaseView : UIView
+#import "BaseViewController.h"
+#import "HomeView.h"
+@interface HomeViewController : BaseViewController
 //---------------------------------------------------------------------------
 //-------------------------------- 变量 ---------------------------------------
 //---------------------------------------------------------------------------
 /**
- @brief  用与显示可变信息的Label
+ @brief   首页视图
  @discussion   null
  @author        魏帅
  */
-@property(nonatomic,strong) UILabel * infoLabel;
+@property(nonatomic,strong) HomeView * homeV;
+
+
 
 //---------------------------------------------------------------------------
 //-------------------------------- 方 法 ---------------------------------------
 //---------------------------------------------------------------------------
--(UILabel *)AddShowInfoLabelOfContent:(NSString *)infoContentString  WithX:(CGFloat)X WithY:(CGFloat)Y WithWeight:(CGFloat)labelWeight  WithHeight:(CGFloat)labelHeight;
 @end

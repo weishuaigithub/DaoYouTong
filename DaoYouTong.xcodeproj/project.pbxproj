@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A71FC99D1FDBD7B500DEB4FD /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A71FC99C1FDBD7B500DEB4FD /* UIViewExt.m */; };
+		A769C2CA1FE103FD00816AD4 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = A769C2C91FE103FD00816AD4 /* SearchView.m */; };
 		A77676CB1FD53C50003DE9F8 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676BE1FD53C50003DE9F8 /* BaseViewController.m */; };
 		A77676CC1FD53C50003DE9F8 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676C01FD53C50003DE9F8 /* BaseTabBarController.m */; };
 		A77676CD1FD53C50003DE9F8 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676C31FD53C50003DE9F8 /* NewsViewController.m */; };
@@ -32,6 +34,7 @@
 		A77676F91FD53C69003DE9F8 /* UIColor+ColorChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676F71FD53C69003DE9F8 /* UIColor+ColorChange.m */; };
 		A776770A1FD54931003DE9F8 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77677091FD54931003DE9F8 /* HomeView.m */; };
 		A77677101FD54B48003DE9F8 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A776770F1FD54B48003DE9F8 /* BaseView.m */; };
+		A7BCF7AD1FDA80930059BECB /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BCF7AC1FDA80930059BECB /* WeatherView.m */; };
 		A7D982AE1FD0DE660046CDC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D982AD1FD0DE660046CDC6 /* AppDelegate.m */; };
 		A7D982B11FD0DE660046CDC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D982B01FD0DE660046CDC6 /* ViewController.m */; };
 		A7D982B41FD0DE660046CDC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D982B21FD0DE660046CDC6 /* Main.storyboard */; };
@@ -60,6 +63,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A71FC99B1FDBD7B500DEB4FD /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		A71FC99C1FDBD7B500DEB4FD /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		A769C2C81FE103FD00816AD4 /* SearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		A769C2C91FE103FD00816AD4 /* SearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
 		A77676BE1FD53C50003DE9F8 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A77676BF1FD53C50003DE9F8 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
 		A77676C01FD53C50003DE9F8 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
@@ -95,6 +102,8 @@
 		A77677091FD54931003DE9F8 /* HomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
 		A776770E1FD54B48003DE9F8 /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		A776770F1FD54B48003DE9F8 /* BaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		A7BCF7AB1FDA80930059BECB /* WeatherView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = "<group>"; };
+		A7BCF7AC1FDA80930059BECB /* WeatherView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = "<group>"; };
 		A7D982A91FD0DE660046CDC6 /* DaoYouTong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaoYouTong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D982AC1FD0DE660046CDC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A7D982AD1FD0DE660046CDC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -138,6 +147,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A71FC99A1FDBD78F00DEB4FD /* ViewExt */ = {
+			isa = PBXGroup;
+			children = (
+				A71FC99B1FDBD7B500DEB4FD /* UIViewExt.h */,
+				A71FC99C1FDBD7B500DEB4FD /* UIViewExt.m */,
+			);
+			path = ViewExt;
+			sourceTree = "<group>";
+		};
+		A769C2C71FE1018F00816AD4 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				A769C2C81FE103FD00816AD4 /* SearchView.h */,
+				A769C2C91FE103FD00816AD4 /* SearchView.m */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 		A77676B41FD53C14003DE9F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,14 +206,10 @@
 		A77676C21FD53C50003DE9F8 /* ClassController */ = {
 			isa = PBXGroup;
 			children = (
-				A77676C91FD53C50003DE9F8 /* HomeViewController.h */,
-				A77676C41FD53C50003DE9F8 /* HomeViewController.m */,
-				A77676C71FD53C50003DE9F8 /* NewsViewController.h */,
-				A77676C31FD53C50003DE9F8 /* NewsViewController.m */,
-				A77676C51FD53C50003DE9F8 /* DetailsViewController.h */,
-				A77676C81FD53C50003DE9F8 /* DetailsViewController.m */,
-				A77676C61FD53C50003DE9F8 /* MyViewController.h */,
-				A77676CA1FD53C50003DE9F8 /* MyViewController.m */,
+				A77677111FD66AD3003DE9F8 /* HomeController */,
+				A77677121FD66AEE003DE9F8 /* NewsController */,
+				A77677131FD66B03003DE9F8 /* DetailsController */,
+				A77677141FD66B2A003DE9F8 /* MineController */,
 			);
 			path = ClassController;
 			sourceTree = "<group>";
@@ -235,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				A77676F51FD53C69003DE9F8 /* PrefixHeader.pch */,
+				A71FC99A1FDBD78F00DEB4FD /* ViewExt */,
 				A77676F61FD53C69003DE9F8 /* ThirdFrameWorkFile */,
 			);
 			path = Other;
@@ -295,6 +319,10 @@
 			children = (
 				A77677081FD54931003DE9F8 /* HomeView.h */,
 				A77677091FD54931003DE9F8 /* HomeView.m */,
+				A7BCF7A41FD979090059BECB /* WeatherView */,
+				A769C2C71FE1018F00816AD4 /* SearchView */,
+				A7BCF7A61FD9792B0059BECB /* FunctionalKeysView */,
+				A7BCF7A71FDA80090059BECB /* GuidesView */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -318,6 +346,65 @@
 			children = (
 			);
 			path = MineView;
+			sourceTree = "<group>";
+		};
+		A77677111FD66AD3003DE9F8 /* HomeController */ = {
+			isa = PBXGroup;
+			children = (
+				A77676C91FD53C50003DE9F8 /* HomeViewController.h */,
+				A77676C41FD53C50003DE9F8 /* HomeViewController.m */,
+			);
+			path = HomeController;
+			sourceTree = "<group>";
+		};
+		A77677121FD66AEE003DE9F8 /* NewsController */ = {
+			isa = PBXGroup;
+			children = (
+				A77676C71FD53C50003DE9F8 /* NewsViewController.h */,
+				A77676C31FD53C50003DE9F8 /* NewsViewController.m */,
+			);
+			path = NewsController;
+			sourceTree = "<group>";
+		};
+		A77677131FD66B03003DE9F8 /* DetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				A77676C51FD53C50003DE9F8 /* DetailsViewController.h */,
+				A77676C81FD53C50003DE9F8 /* DetailsViewController.m */,
+			);
+			path = DetailsController;
+			sourceTree = "<group>";
+		};
+		A77677141FD66B2A003DE9F8 /* MineController */ = {
+			isa = PBXGroup;
+			children = (
+				A77676C61FD53C50003DE9F8 /* MyViewController.h */,
+				A77676CA1FD53C50003DE9F8 /* MyViewController.m */,
+			);
+			path = MineController;
+			sourceTree = "<group>";
+		};
+		A7BCF7A41FD979090059BECB /* WeatherView */ = {
+			isa = PBXGroup;
+			children = (
+				A7BCF7AB1FDA80930059BECB /* WeatherView.h */,
+				A7BCF7AC1FDA80930059BECB /* WeatherView.m */,
+			);
+			path = WeatherView;
+			sourceTree = "<group>";
+		};
+		A7BCF7A61FD9792B0059BECB /* FunctionalKeysView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FunctionalKeysView;
+			sourceTree = "<group>";
+		};
+		A7BCF7A71FDA80090059BECB /* GuidesView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GuidesView;
 			sourceTree = "<group>";
 		};
 		A7D982A01FD0DE660046CDC6 = {
@@ -528,9 +615,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71FC99D1FDBD7B500DEB4FD /* UIViewExt.m in Sources */,
 				A77676D01FD53C50003DE9F8 /* MyViewController.m in Sources */,
 				A7D982B11FD0DE660046CDC6 /* ViewController.m in Sources */,
+				A769C2CA1FE103FD00816AD4 /* SearchView.m in Sources */,
 				A77676CF1FD53C50003DE9F8 /* DetailsViewController.m in Sources */,
+				A7BCF7AD1FDA80930059BECB /* WeatherView.m in Sources */,
 				A77676CC1FD53C50003DE9F8 /* BaseTabBarController.m in Sources */,
 				A77676CB1FD53C50003DE9F8 /* BaseViewController.m in Sources */,
 				A77676CD1FD53C50003DE9F8 /* NewsViewController.m in Sources */,
@@ -623,7 +713,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -678,7 +768,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -702,9 +792,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QF7UF8B3D3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaoYouTong/Other/MoveOffice/Pods/AMapSearch",
+					"$(PROJECT_DIR)/DaoYouTong/Other/MoveOffice/Pods/AMapFoundation",
+					"$(PROJECT_DIR)/DaoYouTong/Other/MoveOffice/Pods/AMap2DMap",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/weishuai/Desktop/随身导游/DaoYouTong/DaoYouTong/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = DaoYouTong/Info.plist;
@@ -721,9 +818,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QF7UF8B3D3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DaoYouTong/Other/MoveOffice/Pods/AMapSearch",
+					"$(PROJECT_DIR)/DaoYouTong/Other/MoveOffice/Pods/AMapFoundation",
+					"$(PROJECT_DIR)/DaoYouTong/Other/MoveOffice/Pods/AMap2DMap",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/weishuai/Desktop/随身导游/DaoYouTong/DaoYouTong/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = DaoYouTong/Info.plist;

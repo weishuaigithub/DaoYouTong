@@ -1,26 +1,30 @@
 //
-//  BaseView.h
+//  SearchView.h
 //  DaoYouTong
 //
-//  Created by 魏帅 on 2017/12/4.
+//  Created by 魏帅 on 2017/12/13.
 //  Copyright © 2017年 魏帅. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseView.h"
 
-@interface BaseView : UIView
+@interface SearchView : BaseView
 //---------------------------------------------------------------------------
 //-------------------------------- 变量 ---------------------------------------
 //---------------------------------------------------------------------------
 /**
- @brief  用与显示可变信息的Label
+ @brief   搜索栏
  @discussion   null
  @author        魏帅
  */
-@property(nonatomic,strong) UILabel * infoLabel;
-
+@property(nonatomic,strong) UITextField * searchTextField;
+/**
+ @brief
+ @discussion   null
+ @author        魏帅
+ */
+@property(nonatomic,strong) UIButton * cameraAndScanBtn;
 //---------------------------------------------------------------------------
 //-------------------------------- 方 法 ---------------------------------------
 //---------------------------------------------------------------------------
--(UILabel *)AddShowInfoLabelOfContent:(NSString *)infoContentString  WithX:(CGFloat)X WithY:(CGFloat)Y WithWeight:(CGFloat)labelWeight  WithHeight:(CGFloat)labelHeight;
 @end
