@@ -34,5 +34,10 @@
  @author        魏帅
  */
 -(void)showTabber;
-
+/**
+ @brief  撤销键盘
+ @discussion   null
+ @author        魏帅
+ */
+-(BOOL)textFieldShouldReturn:(UITextField *)textField;
 @end

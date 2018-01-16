@@ -23,7 +23,7 @@
 //公共设置 文件
 #import "UIColor+ColorChange.h" //颜色转换：iOS中（以#开头）十六进制的颜色转换为UIColor(RGB)
 #import "UIViewExt.h"//控价位置 工具
-
+#import "BaseTabBarController.h"//
 
 #import "BaseView.h"
 

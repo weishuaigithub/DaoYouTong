@@ -19,6 +19,9 @@
     [self hideNavigation];
 }
 - (void)viewDidLoad {
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;//取消自动调整滑动视图位置
+    
     [super viewDidLoad];
     //隐藏导航栏
     //设置视图
@@ -50,7 +53,6 @@
     self.tabBarController.tabBar.hidden = NO;
     
 }
-
 
 
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A71FC99D1FDBD7B500DEB4FD /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A71FC99C1FDBD7B500DEB4FD /* UIViewExt.m */; };
 		A769C2CA1FE103FD00816AD4 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = A769C2C91FE103FD00816AD4 /* SearchView.m */; };
+		A769C2CD1FE7ACF000816AD4 /* camera02.png in Resources */ = {isa = PBXBuildFile; fileRef = A769C2CC1FE7ACF000816AD4 /* camera02.png */; };
+		A769C2CF1FE7ACF700816AD4 /* camera01.png in Resources */ = {isa = PBXBuildFile; fileRef = A769C2CE1FE7ACF700816AD4 /* camera01.png */; };
 		A77676CB1FD53C50003DE9F8 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676BE1FD53C50003DE9F8 /* BaseViewController.m */; };
 		A77676CC1FD53C50003DE9F8 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676C01FD53C50003DE9F8 /* BaseTabBarController.m */; };
 		A77676CD1FD53C50003DE9F8 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676C31FD53C50003DE9F8 /* NewsViewController.m */; };
@@ -32,9 +34,13 @@
 		A77676F21FD53C5A003DE9F8 /* My_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A77676E21FD53C59003DE9F8 /* My_check@2x.png */; };
 		A77676F31FD53C5A003DE9F8 /* Detail_uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = A77676E31FD53C59003DE9F8 /* Detail_uncheck.png */; };
 		A77676F91FD53C69003DE9F8 /* UIColor+ColorChange.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676F71FD53C69003DE9F8 /* UIColor+ColorChange.m */; };
-		A776770A1FD54931003DE9F8 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77677091FD54931003DE9F8 /* HomeView.m */; };
 		A77677101FD54B48003DE9F8 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A776770F1FD54B48003DE9F8 /* BaseView.m */; };
 		A7BCF7AD1FDA80930059BECB /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BCF7AC1FDA80930059BECB /* WeatherView.m */; };
+		A7BD86E61FE90B3C00EBE193 /* FunctionalKeysView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD86E51FE90B3C00EBE193 /* FunctionalKeysView.m */; };
+		A7BD86E91FEE90E900EBE193 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD86E81FEE90E900EBE193 /* BaseTableViewCell.m */; };
+		A7BD86EC1FEE922500EBE193 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD86EB1FEE922500EBE193 /* BaseTableViewController.m */; };
+		A7BD86EF1FEF8D2700EBE193 /* GuidesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD86EE1FEF8D2700EBE193 /* GuidesTableViewController.m */; };
+		A7BD86F21FEF90B900EBE193 /* GuidesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD86F11FEF90B900EBE193 /* GuidesTableViewCell.m */; };
 		A7D982AE1FD0DE660046CDC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D982AD1FD0DE660046CDC6 /* AppDelegate.m */; };
 		A7D982B11FD0DE660046CDC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D982B01FD0DE660046CDC6 /* ViewController.m */; };
 		A7D982B41FD0DE660046CDC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D982B21FD0DE660046CDC6 /* Main.storyboard */; };
@@ -67,6 +73,8 @@
 		A71FC99C1FDBD7B500DEB4FD /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		A769C2C81FE103FD00816AD4 /* SearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
 		A769C2C91FE103FD00816AD4 /* SearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
+		A769C2CC1FE7ACF000816AD4 /* camera02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera02.png; sourceTree = "<group>"; };
+		A769C2CE1FE7ACF700816AD4 /* camera01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera01.png; sourceTree = "<group>"; };
 		A77676BE1FD53C50003DE9F8 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A77676BF1FD53C50003DE9F8 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
 		A77676C01FD53C50003DE9F8 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
@@ -98,12 +106,20 @@
 		A77676F51FD53C69003DE9F8 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A77676F71FD53C69003DE9F8 /* UIColor+ColorChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorChange.m"; sourceTree = "<group>"; };
 		A77676F81FD53C69003DE9F8 /* UIColor+ColorChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorChange.h"; sourceTree = "<group>"; };
-		A77677081FD54931003DE9F8 /* HomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
-		A77677091FD54931003DE9F8 /* HomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
 		A776770E1FD54B48003DE9F8 /* BaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		A776770F1FD54B48003DE9F8 /* BaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		A7BCF7AB1FDA80930059BECB /* WeatherView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = "<group>"; };
 		A7BCF7AC1FDA80930059BECB /* WeatherView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = "<group>"; };
+		A7BD86E41FE90B3C00EBE193 /* FunctionalKeysView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionalKeysView.h; sourceTree = "<group>"; };
+		A7BD86E51FE90B3C00EBE193 /* FunctionalKeysView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionalKeysView.m; sourceTree = "<group>"; };
+		A7BD86E71FEE90E900EBE193 /* BaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		A7BD86E81FEE90E900EBE193 /* BaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		A7BD86EA1FEE922500EBE193 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		A7BD86EB1FEE922500EBE193 /* BaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		A7BD86ED1FEF8D2700EBE193 /* GuidesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidesTableViewController.h; sourceTree = "<group>"; };
+		A7BD86EE1FEF8D2700EBE193 /* GuidesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidesTableViewController.m; sourceTree = "<group>"; };
+		A7BD86F01FEF90B900EBE193 /* GuidesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidesTableViewCell.h; sourceTree = "<group>"; };
+		A7BD86F11FEF90B900EBE193 /* GuidesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidesTableViewCell.m; sourceTree = "<group>"; };
 		A7D982A91FD0DE660046CDC6 /* DaoYouTong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaoYouTong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D982AC1FD0DE660046CDC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A7D982AD1FD0DE660046CDC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -165,6 +181,15 @@
 			path = SearchView;
 			sourceTree = "<group>";
 		};
+		A769C2CB1FE7ABF800816AD4 /* OtherImage */ = {
+			isa = PBXGroup;
+			children = (
+				A769C2CE1FE7ACF700816AD4 /* camera01.png */,
+				A769C2CC1FE7ACF000816AD4 /* camera02.png */,
+			);
+			path = OtherImage;
+			sourceTree = "<group>";
+		};
 		A77676B41FD53C14003DE9F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +224,8 @@
 				A77676BE1FD53C50003DE9F8 /* BaseViewController.m */,
 				A77676BF1FD53C50003DE9F8 /* BaseTabBarController.h */,
 				A77676C01FD53C50003DE9F8 /* BaseTabBarController.m */,
+				A7BD86EA1FEE922500EBE193 /* BaseTableViewController.h */,
+				A7BD86EB1FEE922500EBE193 /* BaseTableViewController.m */,
 			);
 			path = BaseController;
 			sourceTree = "<group>";
@@ -225,6 +252,7 @@
 		A77676D21FD53C59003DE9F8 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				A769C2CB1FE7ABF800816AD4 /* OtherImage */,
 				A77676FA1FD54068003DE9F8 /* Weather */,
 				A77676D31FD53C59003DE9F8 /* TabBar */,
 			);
@@ -296,6 +324,8 @@
 			children = (
 				A776770E1FD54B48003DE9F8 /* BaseView.h */,
 				A776770F1FD54B48003DE9F8 /* BaseView.m */,
+				A7BD86E71FEE90E900EBE193 /* BaseTableViewCell.h */,
+				A7BD86E81FEE90E900EBE193 /* BaseTableViewCell.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -317,8 +347,6 @@
 		A77677001FD54311003DE9F8 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				A77677081FD54931003DE9F8 /* HomeView.h */,
-				A77677091FD54931003DE9F8 /* HomeView.m */,
 				A7BCF7A41FD979090059BECB /* WeatherView */,
 				A769C2C71FE1018F00816AD4 /* SearchView */,
 				A7BCF7A61FD9792B0059BECB /* FunctionalKeysView */,
@@ -353,6 +381,8 @@
 			children = (
 				A77676C91FD53C50003DE9F8 /* HomeViewController.h */,
 				A77676C41FD53C50003DE9F8 /* HomeViewController.m */,
+				A7BD86ED1FEF8D2700EBE193 /* GuidesTableViewController.h */,
+				A7BD86EE1FEF8D2700EBE193 /* GuidesTableViewController.m */,
 			);
 			path = HomeController;
 			sourceTree = "<group>";
@@ -396,6 +426,8 @@
 		A7BCF7A61FD9792B0059BECB /* FunctionalKeysView */ = {
 			isa = PBXGroup;
 			children = (
+				A7BD86E41FE90B3C00EBE193 /* FunctionalKeysView.h */,
+				A7BD86E51FE90B3C00EBE193 /* FunctionalKeysView.m */,
 			);
 			path = FunctionalKeysView;
 			sourceTree = "<group>";
@@ -403,6 +435,8 @@
 		A7BCF7A71FDA80090059BECB /* GuidesView */ = {
 			isa = PBXGroup;
 			children = (
+				A7BD86F01FEF90B900EBE193 /* GuidesTableViewCell.h */,
+				A7BD86F11FEF90B900EBE193 /* GuidesTableViewCell.m */,
 			);
 			path = GuidesView;
 			sourceTree = "<group>";
@@ -578,9 +612,11 @@
 				A77676F21FD53C5A003DE9F8 /* My_check@2x.png in Resources */,
 				A77676F01FD53C59003DE9F8 /* Detail_check.png in Resources */,
 				A77676E61FD53C59003DE9F8 /* news_uncheck.png in Resources */,
+				A769C2CD1FE7ACF000816AD4 /* camera02.png in Resources */,
 				A77676F11FD53C59003DE9F8 /* Home_uncheck.png in Resources */,
 				A77676E81FD53C59003DE9F8 /* Home_uncheck@2x.png in Resources */,
 				A77676F31FD53C5A003DE9F8 /* Detail_uncheck.png in Resources */,
+				A769C2CF1FE7ACF700816AD4 /* camera01.png in Resources */,
 				A77676E51FD53C59003DE9F8 /* news_check@2x.png in Resources */,
 				A77676E41FD53C59003DE9F8 /* Home_check@2x.png in Resources */,
 				A77676E91FD53C59003DE9F8 /* news_check.png in Resources */,
@@ -617,16 +653,20 @@
 			files = (
 				A71FC99D1FDBD7B500DEB4FD /* UIViewExt.m in Sources */,
 				A77676D01FD53C50003DE9F8 /* MyViewController.m in Sources */,
+				A7BD86F21FEF90B900EBE193 /* GuidesTableViewCell.m in Sources */,
 				A7D982B11FD0DE660046CDC6 /* ViewController.m in Sources */,
 				A769C2CA1FE103FD00816AD4 /* SearchView.m in Sources */,
+				A7BD86E91FEE90E900EBE193 /* BaseTableViewCell.m in Sources */,
 				A77676CF1FD53C50003DE9F8 /* DetailsViewController.m in Sources */,
 				A7BCF7AD1FDA80930059BECB /* WeatherView.m in Sources */,
 				A77676CC1FD53C50003DE9F8 /* BaseTabBarController.m in Sources */,
 				A77676CB1FD53C50003DE9F8 /* BaseViewController.m in Sources */,
 				A77676CD1FD53C50003DE9F8 /* NewsViewController.m in Sources */,
+				A7BD86EC1FEE922500EBE193 /* BaseTableViewController.m in Sources */,
+				A7BD86E61FE90B3C00EBE193 /* FunctionalKeysView.m in Sources */,
 				A7D982BC1FD0DE660046CDC6 /* main.m in Sources */,
-				A776770A1FD54931003DE9F8 /* HomeView.m in Sources */,
 				A77676CE1FD53C50003DE9F8 /* HomeViewController.m in Sources */,
+				A7BD86EF1FEF8D2700EBE193 /* GuidesTableViewController.m in Sources */,
 				A7D982AE1FD0DE660046CDC6 /* AppDelegate.m in Sources */,
 				A77676F91FD53C69003DE9F8 /* UIColor+ColorChange.m in Sources */,
 				A77677101FD54B48003DE9F8 /* BaseView.m in Sources */,
