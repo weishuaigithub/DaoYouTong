@@ -41,7 +41,6 @@
         btn.imageView.size = CGSizeMake(40, 40);
         btn.imageView.backgroundColor = [UIColor greenColor];
         btn.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        
         btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//使图片和文字水平居中显示
 //        [btn setTitleEdgeInsets:UIEdgeInsetsMake(btn.imageView.frame.size.height+20 ,-kWidth/6-12, 0.0,0.0)];//文字距离上边框的距离  增加imageView的高度，距离左边框减少imageView的宽度，距离下边框和右边框距离不变 (距离设置并不准确)
 //        [btn setImageEdgeInsets:UIEdgeInsetsMake(20, (kWidth/n-40)/2,btn.titleLabel.bounds.size.height, (kWidth/n-40)/2)];//图片距离右边框距离减少图片的宽度，其它不边
@@ -51,8 +50,38 @@
         {
             [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         }
-//        [btn addTarget:self  action:@selector(intoDifferentWorkReportView:)forControlEvents:UIControlEventTouchUpInside];
+        [btn addTarget:self  action:@selector(intoDifferentWorkReportView:)forControlEvents:UIControlEventTouchUpInside];
         [self  addSubview:btn];
+    }
+    
+}
+//按钮点击事件
+-(void)intoDifferentWorkReportView:(UIButton *)btn
+{
+    //进入 日报/周报/月报  界面
+//    NewWorkReportViewController * newWorkReportVC  = [[NewWorkReportViewController alloc]init];
+    //进入 日报界面
+    if (130 == btn.tag) {
+//        [self.navigationController pushViewController:newWorkReportVC animated:YES];
+        
+    } else if(131 == btn.tag) {//进入 界面
+        
+    }else if(132 == btn.tag) {//进入 界面
+        
+    }else if(133 == btn.tag) {//进入 记录
+    }else if(134 == btn.tag) {//进入 日报
+    }else if(135 == btn.tag)
+    {
+  
+    }else if(136 == btn.tag)
+    {
+        
+    }else if(137 == btn.tag)
+    {
+        
+    }else if(138 == btn.tag)
+    {
+        
     }
     
 }

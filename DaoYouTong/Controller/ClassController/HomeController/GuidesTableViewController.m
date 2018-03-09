@@ -17,12 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //设置视图
-    [self setUI];
+//    [self setUI];
 }
 //设置视图
 -(void)setUI
 {
-    self.tableView.delegate = self;
+//    self.tableView.delegate = self;
     
     
 }

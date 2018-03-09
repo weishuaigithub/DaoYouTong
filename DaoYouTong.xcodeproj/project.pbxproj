@@ -41,6 +41,7 @@
 		A7BD86EC1FEE922500EBE193 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD86EB1FEE922500EBE193 /* BaseTableViewController.m */; };
 		A7BD86EF1FEF8D2700EBE193 /* GuidesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD86EE1FEF8D2700EBE193 /* GuidesTableViewController.m */; };
 		A7BD86F21FEF90B900EBE193 /* GuidesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BD86F11FEF90B900EBE193 /* GuidesTableViewCell.m */; };
+		A7CDBE052052F19000182422 /* HmacSha1Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CDBE032052F19000182422 /* HmacSha1Tool.m */; };
 		A7D982AE1FD0DE660046CDC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D982AD1FD0DE660046CDC6 /* AppDelegate.m */; };
 		A7D982B11FD0DE660046CDC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D982B01FD0DE660046CDC6 /* ViewController.m */; };
 		A7D982B41FD0DE660046CDC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D982B21FD0DE660046CDC6 /* Main.storyboard */; };
@@ -120,6 +121,8 @@
 		A7BD86EE1FEF8D2700EBE193 /* GuidesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidesTableViewController.m; sourceTree = "<group>"; };
 		A7BD86F01FEF90B900EBE193 /* GuidesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuidesTableViewCell.h; sourceTree = "<group>"; };
 		A7BD86F11FEF90B900EBE193 /* GuidesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidesTableViewCell.m; sourceTree = "<group>"; };
+		A7CDBE032052F19000182422 /* HmacSha1Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HmacSha1Tool.m; sourceTree = "<group>"; };
+		A7CDBE042052F19000182422 /* HmacSha1Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HmacSha1Tool.h; sourceTree = "<group>"; };
 		A7D982A91FD0DE660046CDC6 /* DaoYouTong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaoYouTong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D982AC1FD0DE660046CDC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A7D982AD1FD0DE660046CDC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -295,6 +298,7 @@
 		A77676F61FD53C69003DE9F8 /* ThirdFrameWorkFile */ = {
 			isa = PBXGroup;
 			children = (
+				A7CDBE062052F19500182422 /* XinZhiWeather */,
 				A77676F71FD53C69003DE9F8 /* UIColor+ColorChange.m */,
 				A77676F81FD53C69003DE9F8 /* UIColor+ColorChange.h */,
 			);
@@ -439,6 +443,15 @@
 				A7BD86F11FEF90B900EBE193 /* GuidesTableViewCell.m */,
 			);
 			path = GuidesView;
+			sourceTree = "<group>";
+		};
+		A7CDBE062052F19500182422 /* XinZhiWeather */ = {
+			isa = PBXGroup;
+			children = (
+				A7CDBE042052F19000182422 /* HmacSha1Tool.h */,
+				A7CDBE032052F19000182422 /* HmacSha1Tool.m */,
+			);
+			path = XinZhiWeather;
 			sourceTree = "<group>";
 		};
 		A7D982A01FD0DE660046CDC6 = {
@@ -652,6 +665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A71FC99D1FDBD7B500DEB4FD /* UIViewExt.m in Sources */,
+				A7CDBE052052F19000182422 /* HmacSha1Tool.m in Sources */,
 				A77676D01FD53C50003DE9F8 /* MyViewController.m in Sources */,
 				A7BD86F21FEF90B900EBE193 /* GuidesTableViewCell.m in Sources */,
 				A7D982B11FD0DE660046CDC6 /* ViewController.m in Sources */,

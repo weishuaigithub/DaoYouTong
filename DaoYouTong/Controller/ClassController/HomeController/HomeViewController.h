@@ -11,16 +11,23 @@
 #import "SearchView.h"//搜索视图
 #import "FunctionalKeysView.h"//功能按钮视图
 #import "GuidesTableViewController.h"//导游员列表视图
+#import "HmacSha1Tool.h"//心知天气
 @interface HomeViewController : BaseViewController
 //---------------------------------------------------------------------------
 //-------------------------------- 变量 ---------------------------------------
 //---------------------------------------------------------------------------
 /**
- @brief   滚动背景
+ @brief   滚动背景视图
  @discussion   null
  @author        魏帅
  */
 @property(nonatomic,strong) UIScrollView * backScrollV;
+/**
+ @brief   背景视图
+ @discussion   null
+ @author        魏帅
+ */
+@property(nonatomic,strong) UIView * backGroundV;
 /**
  @brief   天气
  @discussion   null
