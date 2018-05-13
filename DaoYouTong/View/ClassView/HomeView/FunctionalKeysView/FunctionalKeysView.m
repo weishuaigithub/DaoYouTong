@@ -17,7 +17,16 @@
 }
 -(void)setUI
 {
-    [self addFunctionalButton];
+//    [self addFunctionalButton];
+    //添加横向滑动 CollectionView
+    
+    
+}
+-(void)addCollectionView
+{
+     
+    
+    
 }
 -(void)addFunctionalButton
 {

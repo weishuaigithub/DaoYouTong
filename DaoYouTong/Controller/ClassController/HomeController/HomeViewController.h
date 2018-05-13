@@ -12,6 +12,8 @@
 #import "FunctionalKeysView.h"//功能按钮视图
 #import "GuidesTableViewController.h"//导游员列表视图
 #import "HmacSha1Tool.h"//心知天气
+#import "FunctionKeysViewController.h"//横向滚动视图
+#import "KeysCollectionViewController.h"
 @interface HomeViewController : BaseViewController
 //---------------------------------------------------------------------------
 //-------------------------------- 变量 ---------------------------------------
@@ -46,6 +48,13 @@
  @author        魏帅
  */
 @property(nonatomic,strong) FunctionalKeysView * functionalKeysV;
+/**
+ @brief  横向滚动功能键区
+ @discussion   null
+ @author        魏帅
+ */
+@property(nonatomic,strong) FunctionKeysViewController * functionalKeysCollectionVC;
+@property(nonatomic,strong) KeysCollectionViewController * keysCollectionVC;
 /**
  @brief   导游员列表视图
  @discussion   null
