@@ -35,8 +35,14 @@
     
     return cell;
 }
+//单元格点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   //点击后 由主界面 跳转到 地图界面
+    NSLog(@"跳转1！");
+    [self.baseTableVCDelegate protocolMethodOfDidSelectCellWithIndexPath:indexPath];
+
+   
 }
 
 

@@ -16,7 +16,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     //隐藏导航栏
-    [self hideNavigation];
+//    [self hideNavigation];
 }
 - (void)viewDidLoad {
     
@@ -37,6 +37,14 @@
 {
     //隐藏导航栏
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+//显示导航栏
+-(void)showNavigation
+{
+    //显示导航栏
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    
+    
 }
 //隐藏tabbar 栏
 -(void)hideTabbar

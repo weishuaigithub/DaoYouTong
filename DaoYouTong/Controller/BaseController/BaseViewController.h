@@ -23,6 +23,12 @@
  */
 -(void)hideNavigation;
 /**
+ @brief 显示导航栏
+ @discussion   null
+ @author        魏帅
+ */
+-(void)showNavigation;
+/**
  @brief  隐藏tabber栏
  @discussion   null
  @author        魏帅

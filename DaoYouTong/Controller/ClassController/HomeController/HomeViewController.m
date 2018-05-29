@@ -7,12 +7,20 @@
 //
 //首页视图
 #import "HomeViewController.h"
-@interface HomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+#import "MapViewController.h"//地图界面
+
+@interface HomeViewController ()<BaseTableViewControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
 
 @end
 
 @implementation HomeViewController
-
+static NSString * const reuseIdentifier = @"Cell";
+-(void)viewWillAppear:(BOOL)animated
+{
+    // 主页 隐藏导航栏
+    [self hideNavigation];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     //设置视图
@@ -65,14 +73,18 @@
     if (!_guidesTableVC) {
         _guidesTableVC  = [[GuidesTableViewController alloc]init];
     }
-    //设置头视图高度，把其他视图加入单元格头视图
-    _guidesTableVC.view.frame = CGRectMake(0, 0,kViewWidth,kViewHeight-44);
+    //如果y为0，则是默认在状态栏即电池栏下方开始，会下移20.，设置高度后会从屏幕左上角算起。VC中的view默认会对UIScrollView做一个适应导航栏的处理，由此推测，其实只要是VC中的控件，都是从设备左上角的(0,0)开始算的，只是对于UIScrollView，VC会自动调整一下内容的位置而已
+    _guidesTableVC.view.frame = CGRectMake(0, -1,kViewWidth,kViewHeight+1);
     
     
     //    _guidesTableVC.tableViewSectionsHeaderHeight = kViewHeight/3+kViewHeight/10+(kViewWidth/2+30);
     
     _guidesTableVC.tableViewCellNumberOfRows = 10;//单元格行数
     _guidesTableVC.tableViewCellHeight = 80.0;//单元格 高度
+    _guidesTableVC.baseTableVCDelegate = self;//设置委托
+
+    //添加 子视图控制器 分离 父视图 与  子视图的控制
+    [self addChildViewController:_guidesTableVC];
     [self.view addSubview:_guidesTableVC.view];
 }
 //二.背景视图
@@ -87,9 +99,11 @@
     [self addSearchView];
     //    //3.功能按钮区视图
 //    [self addFunctionalKeysView];
-    //4 添加横向滚动功能键区
+    //3. 添加横向滚动功能键区
     [self addFunctionKeysCollectionView];
-    //在这里要单独定制头视图，不然会遮盖下面的单元格
+    //4. 添加音视频 切换按钮区
+    [self addAudioAndVideoView];
+    //在这里要单独定制头视图，不然会遮盖下面的单元格，需要设置头视图高度，把其他视图加入单元格头视图
     _guidesTableVC.tableView.tableHeaderView  =_backGroundV;
   
 
@@ -122,47 +136,75 @@
     _functionalKeysV.backgroundColor = [UIColor orangeColor];
     [_backGroundV addSubview:_functionalKeysV];
 }
-//4.添加Collectionview
+//3.添加Collectionview 功能键区
 -(void)addFunctionKeysCollectionView
 {
-    if (!_functionalKeysCollectionVC) {
-        _functionalKeysCollectionVC  = [[FunctionKeysViewController alloc]init];
-
-    }
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     // 设置UICollectionView为横向滚动
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     // 每一行cell之间的间距
     flowLayout.minimumLineSpacing = 50;
+    // 每一列cell之间的间距
+    // flowLayout.minimumInteritemSpacing = 10;
     // 设置第一个cell和最后一个cell,与父控件之间的间距
     flowLayout.sectionInset = UIEdgeInsetsMake(0, 20, 0, 20);
-    _functionalKeysCollectionVC.view = [[UIView alloc]initWithFrame:CGRectMake(0, kViewHeight/3+kViewHeight/10, kViewWidth, kViewWidth/3)];
-   _functionalKeysCollectionVC.collectionV = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kViewWidth, kViewWidth/3-10) collectionViewLayout:flowLayout];
-    _functionalKeysCollectionVC.collectionV.backgroundColor = [UIColor grayColor];
-//    [self addChildViewController:_functionalKeysCollectionVC];
-    [_functionalKeysCollectionVC.view addSubview:_functionalKeysCollectionVC.collectionV];
-    [_backGroundV addSubview:_functionalKeysCollectionVC.view];
     
-    
-    
-//    if (!_keysCollectionVC) {
-//        _keysCollectionVC  = [[KeysCollectionViewController alloc]init];
-//
-//    }
-//    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    // 设置UICollectionView为横向滚动
-//    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//    // 每一行cell之间的间距
-//    flowLayout.minimumLineSpacing = 50;
-//    // 设置第一个cell和最后一个cell,与父控件之间的间距
-//    flowLayout.sectionInset = UIEdgeInsetsMake(0, 20, 0, 20);
-//
-//    _keysCollectionVC.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, kViewHeight/3+kViewHeight/10, kViewWidth, kViewWidth/3) collectionViewLayout:flowLayout];
-//    _keysCollectionVC.view.backgroundColor = [UIColor grayColor];
-////    [self addChildViewController:_keysCollectionVC];
-//    [_backGroundV addSubview:_keysCollectionVC.collectionView ];
-}
+    _collectionV  = [[UICollectionView alloc]initWithFrame:CGRectMake(0, kViewHeight/3+kViewHeight/10, kViewWidth, kViewWidth/3*0.7) collectionViewLayout:flowLayout ];
+    _collectionV.delegate = self;
+    _collectionV.dataSource = self;
+    _collectionV.backgroundColor = [UIColor blueColor];
+    [_collectionV registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [_backGroundV addSubview:_collectionV];
 
+}
+//功能键区 行数
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 10;
+}
+//功能键区 单元格样式
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+    if (!cell ) {
+        NSLog(@"cell为空,创建cell");
+        cell = [[UICollectionViewCell alloc] init];
+    }
+    cell.backgroundColor = [UIColor yellowColor];
+    
+    return cell;
+}
+//4. 添加音视频 切换按钮区
+-(void)addAudioAndVideoView
+{
+    //1.音频按钮
+    UIButton * audioBtn  = [[UIButton alloc]initWithFrame:CGRectMake(0, kViewHeight/3+kViewHeight/10+kViewWidth/3*0.7, kViewWidth/2, kViewWidth/3*0.3)];
+    audioBtn.backgroundColor = [UIColor greenColor];
+    [audioBtn setTitle:@"音频" forState:UIControlStateNormal];
+    [_backGroundV addSubview:audioBtn];
+    //2.视频按钮
+    UIButton * videoBtn  = [[UIButton alloc]initWithFrame:CGRectMake(kViewWidth/2, kViewHeight/3+kViewHeight/10+kViewWidth/3*0.7, kViewWidth/2, kViewWidth/3*0.3)];
+    videoBtn.backgroundColor = [UIColor greenColor];
+    [videoBtn setTitle:@"视频" forState:UIControlStateNormal];
+    [_backGroundV addSubview:videoBtn];
+    
+}
+//----------------------协议方法  单元格点击事件------------------------------
+-(void)protocolMethodOfDidSelectCellWithIndexPath:(NSIndexPath *)indexPath
+{
+     NSLog(@"跳转2！");
+    MapViewController * mapVC  = [[MapViewController alloc]init];
+    mapVC.view.backgroundColor = [UIColor whiteColor];
+    //跳转方法 1
+//    [self presentViewController:mapVC animated:YES completion:^{  }];
+    //跳转方法 2 添加了导航栏
+//    UINavigationController *  nav  = [[UINavigationController alloc]initWithRootViewController:mapVC];
+//    [self presentViewController:nav animated:YES completion:^{}];
+    //跳转方法 3
+    
+    [self.navigationController pushViewController:mapVC animated:YES];
+
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

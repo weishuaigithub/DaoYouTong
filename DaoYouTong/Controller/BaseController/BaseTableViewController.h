@@ -8,7 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseTableViewCell.h"
+/**
+ @brief       定义协议,跳转控制器
+ @discussion   null
+ @author        魏帅
+ */
+//自定义 跳转协议
+@protocol BaseTableViewControllerDelegate
+@required//必须实现
+@optional//选择实现
+-(void)protocolMethodOfDidSelectCellWithIndexPath:(NSIndexPath *)indexPath;
+-(void)protocolMethodOfDidSelectCellWithIndexPath:(NSIndexPath *)indexPath withButton:(UIButton *)button;
+
+@end
+
 @interface BaseTableViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic,assign)id <BaseTableViewControllerDelegate> baseTableVCDelegate;//跳转协议
+
 //---------------------------------------------------------------------------
 //-------------------------------- 变量 ---------------------------------------
 //---------------------------------------------------------------------------
