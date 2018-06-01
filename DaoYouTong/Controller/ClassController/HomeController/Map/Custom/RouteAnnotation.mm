@@ -15,7 +15,7 @@
 @synthesize degree = _degree;
 
 
-- (BMKAnnotationView*)getRouteAnnotationView:(BMKMapView *)mapview
+- (BMKAnnotationView*)getRouteAnnotationView:(BMKMapView *)mapview withArray:(NSMutableArray *)nameArray withNumber:(NSInteger)number
 {
     BMKAnnotationView* view = nil;
     switch (_type) {
@@ -24,10 +24,13 @@
             view = [mapview dequeueReusableAnnotationViewWithIdentifier:@"start_node"];
             if (view == nil) {
                 view = [[BMKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:@"start_node"];
-                NSBundle *bundle = [NSBundle mainBundle];
-                NSString *resourcePath = [bundle resourcePath];
-                NSString *filePath = [resourcePath stringByAppendingPathComponent:@"icon_start.png"];
-                view.image = [UIImage imageWithContentsOfFile:filePath];
+                //路径方法添加图片
+//                NSBundle *bundle = [NSBundle mainBundle];
+//                NSString *resourcePath = [bundle resourcePath];
+//                NSString *filePath = [resourcePath stringByAppendingPathComponent:@"icon_start.png"];
+//                view.image = [UIImage imageWithContentsOfFile:filePath];
+//                view.image = [UIImage imageNamed:@"icon_start.png"];
+                view.image = [self createTextImage:[nameArray objectAtIndex:number-1]];//根据景点名称设计图片
                 NSLog(@"  view1·  is  %@",view);//view 大小为零是因为 图片没有加载上
                 view.centerOffset = CGPointMake(0, -(view.frame.size.height * 0.5));
             }
@@ -39,7 +42,8 @@
             if (view == nil) {
                 view = [[BMKAnnotationView alloc]initWithAnnotation:self reuseIdentifier:@"end_node"];
         
-                view.image = [UIImage imageNamed:@"icon_end.png"];
+//                view.image = [UIImage imageNamed:@"icon_end.png"];
+                view.image = [self createTextImage:[nameArray objectAtIndex:number]];//根据景点名称设计图片
                 view.centerOffset = CGPointMake(0, -(view.frame.size.height * 0.5));
             }
         }
@@ -70,7 +74,7 @@
             } else {
                 [view setNeedsDisplay];
             }
-            UIImage* image = [UIImage imageNamed:@"icon_direction.png"];
+            UIImage* image = [UIImage imageNamed:@""];//icon_direction.png 方向箭头 图片
             view.image = [image imageRotatedByDegrees:_degree];
         }
             break;
@@ -106,5 +110,29 @@
     }
     return view;
 }
-
+//生成图片
+-(UIImage *)createTextImage:(NSString*)text
+{
+    UILabel *temptext  = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 40, 25)];
+    temptext.text = text;
+    temptext.font = [UIFont systemFontOfSize:12];
+    temptext.textColor = [UIColor blackColor];
+    temptext.textAlignment = NSTextAlignmentCenter;
+    temptext.backgroundColor = [UIColor greenColor];
+    UIImage *image  = [self imageForView:temptext];//根据文字画图
+    return  image;
+    
+}
+- (UIImage *)imageForView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0);
+    
+    if ([view respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)])
+        [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+    else
+        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 @end

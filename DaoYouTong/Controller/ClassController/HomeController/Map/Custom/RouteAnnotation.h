@@ -19,7 +19,7 @@
 
 //获取该RouteAnnotation对应的BMKAnnotationView
 - (BMKAnnotationView*)getRouteAnnotationView:(BMKMapView *)mapview;
-
+- (BMKAnnotationView*)getRouteAnnotationView:(BMKMapView *)mapview withArray:(NSMutableArray *)nameArray withNumber:(NSInteger)number;
 @end
 
 

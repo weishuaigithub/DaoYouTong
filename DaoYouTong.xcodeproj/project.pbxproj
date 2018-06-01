@@ -29,6 +29,7 @@
 		A737918320AC24FF00812D54 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A737916F20AC24FF00812D54 /* MessageUI.framework */; };
 		A737918420AC24FF00812D54 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A737917020AC24FF00812D54 /* CoreTelephony.framework */; };
 		A737918620AC250D00812D54 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A737918520AC250C00812D54 /* libstdc++.6.0.9.tbd */; };
+		A73997FE20BE93CF000787F4 /* texture_arrow2.png in Resources */ = {isa = PBXBuildFile; fileRef = A73997FD20BE93CF000787F4 /* texture_arrow2.png */; };
 		A73DF0BD20AFFBA900CA9DA6 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A73DF0BC20AFFBA900CA9DA6 /* MapViewController.m */; };
 		A73DF0C020B3F44700CA9DA6 /* RouteAnnotation.mm in Sources */ = {isa = PBXBuildFile; fileRef = A73DF0BF20B3F44600CA9DA6 /* RouteAnnotation.mm */; };
 		A73DF0C520B3F4A500CA9DA6 /* PromptInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A73DF0C320B3F4A500CA9DA6 /* PromptInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -129,6 +130,7 @@
 		A737916F20AC24FF00812D54 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A737917020AC24FF00812D54 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A737918520AC250C00812D54 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		A73997FD20BE93CF000787F4 /* texture_arrow2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_arrow2.png; sourceTree = "<group>"; };
 		A73DF0BB20AFFBA900CA9DA6 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		A73DF0BC20AFFBA900CA9DA6 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		A73DF0BE20B3F44600CA9DA6 /* RouteAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteAnnotation.h; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 		A769C2CB1FE7ABF800816AD4 /* OtherImage */ = {
 			isa = PBXGroup;
 			children = (
+				A73997FD20BE93CF000787F4 /* texture_arrow2.png */,
 				A78F631E20BB976D00F0A279 /* icon_direction.png */,
 				A78F632120BB976E00F0A279 /* icon_direction@2x.png */,
 				A78F631F20BB976D00F0A279 /* icon_end.png */,
@@ -821,6 +824,7 @@
 				A77676E51FD53C59003DE9F8 /* news_check@2x.png in Resources */,
 				A77676E41FD53C59003DE9F8 /* Home_check@2x.png in Resources */,
 				A77676E91FD53C59003DE9F8 /* news_check.png in Resources */,
+				A73997FE20BE93CF000787F4 /* texture_arrow2.png in Resources */,
 				A7D982B91FD0DE660046CDC6 /* LaunchScreen.storyboard in Resources */,
 				A77676EB1FD53C59003DE9F8 /* Home_check.png in Resources */,
 				A7D982B61FD0DE660046CDC6 /* Assets.xcassets in Resources */,

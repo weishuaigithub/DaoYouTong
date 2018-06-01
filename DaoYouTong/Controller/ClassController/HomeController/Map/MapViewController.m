@@ -21,9 +21,10 @@
     
     BMKPolyline* _polyLine;//绘制路线_polyLine
     NSMutableArray * _addressArray;//标记点数组
+    NSMutableArray * _addressNameArray;//标记点名称数组
     NSMutableArray * _overLaysArray;//自定义步行的 绘制路段数组
     BMKWalkingRoutePlanOption *walkingRouteSearchOption2;
-    int number;//判断路段绘制次数
+    int _number;//判断路段绘制次数
 }
 
 @end
@@ -112,8 +113,7 @@
     walkingRouteSearchOption1.from = start;
     walkingRouteSearchOption1.to = end;
 //    BOOL flag = [_routesearch walkingSearch:walkingRouteSearchOption1];
-    //检索方法
-//   [self delayMethod:walkingRouteSearchOption1];
+   
     //步行路线 规划
      BMKPlanNode* point1 = [[BMKPlanNode alloc]init];
     BMKPlanNode* point2 = [[BMKPlanNode alloc]init];
@@ -123,22 +123,21 @@
     _overLaysArray  = [[NSMutableArray alloc]init];
     //地址数组
     _addressArray  = [[NSMutableArray alloc]init];
-    
     //判断路段绘制次数
-     number  =0;
+    _number =0;//由0 开始是因为初始有2个点已经发起了规划请求
     [_addressArray addObject:start];
     [_addressArray addObject:end];
     [_addressArray addObject:point1];
     [_addressArray addObject:point2];
 
-    //-------多位置 规划 路线---------
-    for (int i= 0; i<_addressArray.count-1; i++) {
-        BMKWalkingRoutePlanOption *walkingRouteSearchOption = [[BMKWalkingRoutePlanOption alloc]init];
-        walkingRouteSearchOption.from = [_addressArray objectAtIndex:i];
-        walkingRouteSearchOption.to = [_addressArray objectAtIndex:i+1];
-        [self delayMethod:walkingRouteSearchOption];
-        //    [self performSelector:@selector(delayMethod) withObject:nil/*延时方法，可传任意类型参数*/ afterDelay:0.1];
-    }
+    //地址名称数组
+    _addressNameArray = [[NSMutableArray alloc]init];
+    [_addressNameArray addObject:@"景点1"];
+    [_addressNameArray addObject:@"景点2"];
+    [_addressNameArray addObject:@"景点3"];
+    [_addressNameArray addObject:@"景点4"];
+    //检索方法
+    [self delayMethod:walkingRouteSearchOption1];
 }
 //发起路线搜索方法
 -(BOOL)delayMethod:(BMKWalkingRoutePlanOption *)walkingRouteSearchOption
@@ -147,7 +146,8 @@
     if(flag)
     {
         NSLog(@"walk检索发送成功");
-        number++;
+        NSLog(@"number  is %d",_number);
+        _number++;
     }
     else
     {
@@ -163,10 +163,11 @@
     NSLog(@"onGetWalkingRouteResult error:%d", (int)error);
     //清除 注释节点
     NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
-        [_mapView removeAnnotations:array];
+//清除 注释节点
+//        [_mapView removeAnnotations:array];
     //清除 覆盖路径
     array = [NSArray arrayWithArray:_mapView.overlays];
-        [_mapView removeOverlays:array];
+//        [_mapView removeOverlays:array];
     if (error == BMK_SEARCH_NO_ERROR) {
         BMKWalkingRouteLine* plan = (BMKWalkingRouteLine*)[result.routes objectAtIndex:0];
         // 计算路线方案中的路段数目
@@ -177,21 +178,24 @@
         for (int i = 0; i < size; i++) {
             BMKWalkingStep* transitStep = [plan.steps objectAtIndex:i];
             if(i==0){
-                RouteAnnotation* item = [[RouteAnnotation alloc]init];
-                item.coordinate = plan.starting.location;
-                item.title = @"起点";
-                item.type = 0;
-                [_mapView addAnnotation:item]; // 添加起点标注
-                
+//                if (_number == 1) {
+                    RouteAnnotation* item = [[RouteAnnotation alloc]init];
+                    item.coordinate = plan.starting.location;
+                    item.title = @"起点";
+                    item.type = 0;
+                    [_mapView addAnnotation:item]; // 添加起点标注
+//                }
+               
             }
             if(i==size-1){
-                RouteAnnotation* item = [[RouteAnnotation alloc]init];
-                item.coordinate = plan.terminal.location;
+//                if (_number == _addressArray.count-1) {
+                    RouteAnnotation* item = [[RouteAnnotation alloc]init];
+                    item.coordinate = plan.terminal.location;
+                    item.title = @"终点";
+                    item.type = 1;
+                    [_mapView addAnnotation:item]; // 添加终点标注
+//                }
                 
-                item.title = @"终点";
-                item.type = 1;
-                
-                [_mapView addAnnotation:item]; // 添加终点标注
             }
             //添加annotation注释节点
             RouteAnnotation* item = [[RouteAnnotation alloc]init];
@@ -229,24 +233,45 @@
         
         [_overLaysArray addObject:_polyLine];
         NSLog(@"overLaysArray is  %@",_overLaysArray);
-//        [_mapView addOverlay:_polyLine]; // 添加单条路线overlay
-         [_mapView addOverlays:_overLaysArray]; // 添加路线overlay数组
-        delete []temppoints;
-        [self mapViewFitPolyLine:_polyLine];
+
+        
+        //-------多位置 规划 路线---------
+        if(_number <_addressArray.count-1){
+            NSLog(@"number  is %d",_number);
+                BMKWalkingRoutePlanOption *walkingRouteSearchOption = [[BMKWalkingRoutePlanOption alloc]init];
+                walkingRouteSearchOption.from = [_addressArray objectAtIndex:_number];
+                walkingRouteSearchOption.to = [_addressArray objectAtIndex:_number+1];
+                [self delayMethod:walkingRouteSearchOption];
+
+        }else{
+            NSLog(@"执行完毕！");
+            //        [_mapView addOverlay:_polyLine]; // 添加单条路线overlay
+            [_mapView addOverlays:_overLaysArray]; // 添加路线overlay数组
+            delete []temppoints;
+            //清除 注释节点
+            [_mapView removeAnnotations:array];
+            [self mapViewFitPolyLine:_polyLine];
+        }
+
+       
     } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR) {
         //检索失败
         [self resetSearch:result.suggestAddrResult];
         [self onClickWalkSearch];//重复检索？？？？
     }
 }
-//绘制的路径线宽及颜色
+//绘制的路径 样式/线宽/颜色/等
 - (BMKOverlayView*)mapView:(BMKMapView *)map viewForOverlay:(id<BMKOverlay>)overlay
 {
     if ([overlay isKindOfClass:[BMKPolyline class]]) {
         BMKPolylineView* polylineView = [[BMKPolylineView alloc] initWithOverlay:overlay];
         polylineView.fillColor = [[UIColor alloc] initWithRed:0 green:1 blue:1 alpha:1];
         polylineView.strokeColor = [[UIColor alloc] initWithRed:0 green:0 blue:1 alpha:0.7];
-        polylineView.lineWidth = 3.0;
+        polylineView.lineWidth = 5.0;
+        
+//        polylineView.isFocus = YES;// 是否分段纹理绘制（突出显示），默认YES
+        //加载分段纹理图片，必须否则不能进行分段纹理绘制
+        [polylineView loadStrokeTextureImage:[UIImage imageNamed:@"texture_arrow2.png"]];
         return polylineView;
     }
     return nil;
@@ -257,14 +282,62 @@
 {
     //返回不同的标注点样式
     if ([annotation isKindOfClass:[RouteAnnotation class]]) {
-        
-        return [(RouteAnnotation*)annotation getRouteAnnotationView:mapView];
+
+        return [(RouteAnnotation*)annotation getRouteAnnotationView:mapView withArray:_addressNameArray withNumber:_number];
     }
     
+//    if ([annotation isKindOfClass:[BMKPointAnnotation class]])
+//    {
+//        static NSString *reuseIndetifier = @"annotationReuseIndetifier";
+//        BMKAnnotationView *annotationView = (BMKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseIndetifier];
+//        if (annotationView == nil)
+//        {
+//            annotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation
+//                                                           reuseIdentifier:reuseIndetifier];
+//        }
+//        annotationView.image = [self createTextImage:@"亚圣殿"];//根据景点名称设计图片
+//        return annotationView;
+//    }
     return nil;
 }
-#pragma mark - 私有
+- (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view
+{
+    
+    NSLog(@"选中标注！");
+}
 
+//生成图片
+-(UIImage *)createTextImage:(NSString*)text
+{
+    UILabel *temptext  = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 40, 25)];
+    temptext.text = text;
+    temptext.font = [UIFont systemFontOfSize:12];
+    temptext.textColor = [UIColor blackColor];
+    temptext.textAlignment = NSTextAlignmentCenter;
+    temptext.backgroundColor = [UIColor greenColor];
+    UIImage *image  = [self imageForView:temptext];//根据文字画图
+    return  image;
+    
+}
+- (UIImage *)imageForView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0);
+    
+    if ([view respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)])
+        [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+    else
+        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+// 当点击annotation view弹出的泡泡时，调用此接口
+- (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view;
+{
+    NSLog(@"paopaoclick");
+}
+
+#pragma mark - 私有
 //根据polyline设置地图范围
 - (void)mapViewFitPolyLine:(BMKPolyline *) polyLine {
     CGFloat leftTopX, leftTopY, rightBottomX, rightBottomY;
