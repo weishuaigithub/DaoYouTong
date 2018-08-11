@@ -8,7 +8,7 @@
 
 #import "RouteAnnotation.h"
 #import "UIImage+Rotate.h"
-
+#import "AddressAnnotation.h"//地址详情
 @implementation RouteAnnotation
 
 @synthesize type = _type;
@@ -18,6 +18,7 @@
 - (BMKAnnotationView*)getRouteAnnotationView:(BMKMapView *)mapview withArray:(NSMutableArray *)nameArray withNumber:(NSInteger)number
 {
     BMKAnnotationView* view = nil;
+    AddressAnnotation * addressAnnotaton;
     switch (_type) {
         case 0:
         {
@@ -30,9 +31,19 @@
 //                NSString *filePath = [resourcePath stringByAppendingPathComponent:@"icon_start.png"];
 //                view.image = [UIImage imageWithContentsOfFile:filePath];
 //                view.image = [UIImage imageNamed:@"icon_start.png"];
-                view.image = [self createTextImage:[nameArray objectAtIndex:number-1]];//根据景点名称设计图片
-                NSLog(@"  view1·  is  %@",view);//view 大小为零是因为 图片没有加载上
-                view.centerOffset = CGPointMake(0, -(view.frame.size.height * 0.5));
+                NSLog(@"nameArray is  %@",nameArray);
+                addressAnnotaton =  [nameArray objectAtIndex:number-1];
+                NSString * nameStr  = addressAnnotaton.addressName;
+                NSLog(@"namestr is %@",nameStr);
+                view.image = [self createTextImage:nameStr];//根据景点名称设计图片
+//                NSLog(@"  view1·  is  %@",view);//view 大小为零是因为 图片没有加载上
+                if (addressAnnotaton.directionInt == 1) {
+                    
+                    view.centerOffset = CGPointMake(0, -(view.frame.size.height * 0.5));
+                    
+                }else{
+                    view.centerOffset = CGPointMake(-(view.frame.size.width), -(view.frame.size.height * 0.5));
+                }
             }
         }
             break;
@@ -43,8 +54,19 @@
                 view = [[BMKAnnotationView alloc]initWithAnnotation:self reuseIdentifier:@"end_node"];
         
 //                view.image = [UIImage imageNamed:@"icon_end.png"];
-                view.image = [self createTextImage:[nameArray objectAtIndex:number]];//根据景点名称设计图片
-                view.centerOffset = CGPointMake(0, -(view.frame.size.height * 0.5));
+//                view.image = [self createTextImage:[nameArray objectAtIndex:number]];//根据景点名称设计图片
+//                view.centerOffset = CGPointMake(0, -(view.frame.size.height * 0.5));
+                
+                addressAnnotaton =  [nameArray objectAtIndex:number];
+                NSString * nameStr  = addressAnnotaton.addressName;
+                 NSLog(@"namestr is %@",nameStr);
+                view.image = [self createTextImage:nameStr];//根据景点名称设计图片
+                //                NSLog(@"  view1·  is  %@",view);//view 大小为零是因为 图片没有加载上
+                if (addressAnnotaton.directionInt == 1) {
+                    view.centerOffset = CGPointMake(0, -(view.frame.size.height * 0.5));
+                }else{
+                    view.centerOffset = CGPointMake(-(view.frame.size.width), -(view.frame.size.height * 0.5));
+                }
             }
         }
             break;

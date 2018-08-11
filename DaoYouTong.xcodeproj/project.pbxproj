@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B9FFF5609FA2713D1856317 /* libPods-DaoYouTong.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E2AA0D81BE9F21BB426A4B /* libPods-DaoYouTong.a */; };
+		A71D4DEE211D742E0041D998 /* UIView+CLSetRect.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DE6211D742D0041D998 /* UIView+CLSetRect.m */; };
+		A71D4DEF211D742E0041D998 /* UIViewController+CLPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DE7211D742D0041D998 /* UIViewController+CLPlayerRotation.m */; };
+		A71D4DF0211D742E0041D998 /* UINavigationController+CLPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DEA211D742D0041D998 /* UINavigationController+CLPlayerRotation.m */; };
+		A71D4DF1211D742E0041D998 /* UITabBarController+CLPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DEB211D742D0041D998 /* UITabBarController+CLPlayerRotation.m */; };
+		A71D4E00211D74400041D998 /* CLPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DF3211D743F0041D998 /* CLPlayerView.m */; };
+		A71D4E01211D74400041D998 /* PlayBottomToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DF4211D743F0041D998 /* PlayBottomToolBar.m */; };
+		A71D4E02211D74400041D998 /* PlayTopToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DF6211D743F0041D998 /* PlayTopToolBar.m */; };
+		A71D4E03211D74400041D998 /* CLGCDTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DF8211D743F0041D998 /* CLGCDTimerManager.m */; };
+		A71D4E04211D74400041D998 /* AILoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DFB211D74400041D998 /* AILoadingView.m */; };
+		A71D4E05211D74400041D998 /* CLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DFC211D74400041D998 /* CLSlider.m */; };
+		A71D4E06211D74400041D998 /* CLPlayerMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4DFE211D74400041D998 /* CLPlayerMaskView.m */; };
+		A71D4E0C211D96E00041D998 /* CLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A71D4E0B211D96E00041D998 /* CLModel.m */; };
 		A71FC99D1FDBD7B500DEB4FD /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = A71FC99C1FDBD7B500DEB4FD /* UIViewExt.m */; };
 		A737905720A8270100812D54 /* FunctionKeysCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A737905620A8270100812D54 /* FunctionKeysCollectionViewCell.m */; };
 		A737907720AC0F9A00812D54 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A737907620AC0F9A00812D54 /* mapapi.bundle */; };
@@ -30,6 +43,7 @@
 		A737918420AC24FF00812D54 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A737917020AC24FF00812D54 /* CoreTelephony.framework */; };
 		A737918620AC250D00812D54 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A737918520AC250C00812D54 /* libstdc++.6.0.9.tbd */; };
 		A73997FE20BE93CF000787F4 /* texture_arrow2.png in Resources */ = {isa = PBXBuildFile; fileRef = A73997FD20BE93CF000787F4 /* texture_arrow2.png */; };
+		A739980120C18F25000787F4 /* AddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A739980020C18F25000787F4 /* AddressAnnotation.m */; };
 		A73DF0BD20AFFBA900CA9DA6 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A73DF0BC20AFFBA900CA9DA6 /* MapViewController.m */; };
 		A73DF0C020B3F44700CA9DA6 /* RouteAnnotation.mm in Sources */ = {isa = PBXBuildFile; fileRef = A73DF0BF20B3F44600CA9DA6 /* RouteAnnotation.mm */; };
 		A73DF0C520B3F4A500CA9DA6 /* PromptInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A73DF0C320B3F4A500CA9DA6 /* PromptInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -40,6 +54,15 @@
 		A769C2CA1FE103FD00816AD4 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = A769C2C91FE103FD00816AD4 /* SearchView.m */; };
 		A769C2CD1FE7ACF000816AD4 /* camera02.png in Resources */ = {isa = PBXBuildFile; fileRef = A769C2CC1FE7ACF000816AD4 /* camera02.png */; };
 		A769C2CF1FE7ACF700816AD4 /* camera01.png in Resources */ = {isa = PBXBuildFile; fileRef = A769C2CE1FE7ACF700816AD4 /* camera01.png */; };
+		A76BECA420E7193600474817 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A76BEC9920E7193500474817 /* FMDatabaseQueue.m */; };
+		A76BECA520E7193600474817 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A76BEC9C20E7193600474817 /* FMResultSet.m */; };
+		A76BECA620E7193600474817 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = A76BEC9D20E7193600474817 /* FMDatabasePool.m */; };
+		A76BECA720E7193600474817 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A76BECA120E7193600474817 /* FMDatabaseAdditions.m */; };
+		A76BECA820E7193600474817 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = A76BECA220E7193600474817 /* FMDatabase.m */; };
+		A772408A20C68610009A5A26 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A772408920C68610009A5A26 /* music.mp3 */; };
+		A772409720C6D341009A5A26 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A772409620C6D340009A5A26 /* AVKit.framework */; };
+		A772409A20C6D4AD009A5A26 /* AVAudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A772409920C6D4AD009A5A26 /* AVAudioPlayerViewController.m */; };
+		A772409C20C773E1009A5A26 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A772409B20C773E1009A5A26 /* AVFoundation.framework */; };
 		A77676CB1FD53C50003DE9F8 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676BE1FD53C50003DE9F8 /* BaseViewController.m */; };
 		A77676CC1FD53C50003DE9F8 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676C01FD53C50003DE9F8 /* BaseTabBarController.m */; };
 		A77676CD1FD53C50003DE9F8 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77676C31FD53C50003DE9F8 /* NewsViewController.m */; };
@@ -106,6 +129,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		092178494820D61F33F61D70 /* Pods-DaoYouTong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaoYouTong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DaoYouTong/Pods-DaoYouTong.debug.xcconfig"; sourceTree = "<group>"; };
+		14F455F86805E4B82431DE58 /* Pods-DaoYouTong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DaoYouTong.release.xcconfig"; path = "Pods/Target Support Files/Pods-DaoYouTong/Pods-DaoYouTong.release.xcconfig"; sourceTree = "<group>"; };
+		48E2AA0D81BE9F21BB426A4B /* libPods-DaoYouTong.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DaoYouTong.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A71D4DE6211D742D0041D998 /* UIView+CLSetRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLSetRect.m"; sourceTree = "<group>"; };
+		A71D4DE7211D742D0041D998 /* UIViewController+CLPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CLPlayerRotation.m"; sourceTree = "<group>"; };
+		A71D4DE8211D742D0041D998 /* UINavigationController+CLPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+CLPlayerRotation.h"; sourceTree = "<group>"; };
+		A71D4DE9211D742D0041D998 /* UITabBarController+CLPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+CLPlayerRotation.h"; sourceTree = "<group>"; };
+		A71D4DEA211D742D0041D998 /* UINavigationController+CLPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+CLPlayerRotation.m"; sourceTree = "<group>"; };
+		A71D4DEB211D742D0041D998 /* UITabBarController+CLPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+CLPlayerRotation.m"; sourceTree = "<group>"; };
+		A71D4DEC211D742D0041D998 /* UIView+CLSetRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CLSetRect.h"; sourceTree = "<group>"; };
+		A71D4DED211D742D0041D998 /* UIViewController+CLPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CLPlayerRotation.h"; sourceTree = "<group>"; };
+		A71D4DF2211D743F0041D998 /* PlayBottomToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayBottomToolBar.h; sourceTree = "<group>"; };
+		A71D4DF3211D743F0041D998 /* CLPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPlayerView.m; sourceTree = "<group>"; };
+		A71D4DF4211D743F0041D998 /* PlayBottomToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayBottomToolBar.m; sourceTree = "<group>"; };
+		A71D4DF5211D743F0041D998 /* AILoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AILoadingView.h; sourceTree = "<group>"; };
+		A71D4DF6211D743F0041D998 /* PlayTopToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayTopToolBar.m; sourceTree = "<group>"; };
+		A71D4DF7211D743F0041D998 /* CLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSlider.h; sourceTree = "<group>"; };
+		A71D4DF8211D743F0041D998 /* CLGCDTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGCDTimerManager.m; sourceTree = "<group>"; };
+		A71D4DF9211D74400041D998 /* CLPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPlayerView.h; sourceTree = "<group>"; };
+		A71D4DFA211D74400041D998 /* PlayTopToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayTopToolBar.h; sourceTree = "<group>"; };
+		A71D4DFB211D74400041D998 /* AILoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AILoadingView.m; sourceTree = "<group>"; };
+		A71D4DFC211D74400041D998 /* CLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSlider.m; sourceTree = "<group>"; };
+		A71D4DFD211D74400041D998 /* CLPlayerMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPlayerMaskView.h; sourceTree = "<group>"; };
+		A71D4DFE211D74400041D998 /* CLPlayerMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPlayerMaskView.m; sourceTree = "<group>"; };
+		A71D4DFF211D74400041D998 /* CLGCDTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGCDTimerManager.h; sourceTree = "<group>"; };
+		A71D4E0A211D96E00041D998 /* CLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLModel.h; sourceTree = "<group>"; };
+		A71D4E0B211D96E00041D998 /* CLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLModel.m; sourceTree = "<group>"; };
 		A71FC99B1FDBD7B500DEB4FD /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		A71FC99C1FDBD7B500DEB4FD /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 		A737905520A8270100812D54 /* FunctionKeysCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionKeysCollectionViewCell.h; sourceTree = "<group>"; };
@@ -131,6 +181,8 @@
 		A737917020AC24FF00812D54 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A737918520AC250C00812D54 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		A73997FD20BE93CF000787F4 /* texture_arrow2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture_arrow2.png; sourceTree = "<group>"; };
+		A73997FF20C18F25000787F4 /* AddressAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressAnnotation.h; sourceTree = "<group>"; };
+		A739980020C18F25000787F4 /* AddressAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressAnnotation.m; sourceTree = "<group>"; };
 		A73DF0BB20AFFBA900CA9DA6 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		A73DF0BC20AFFBA900CA9DA6 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		A73DF0BE20B3F44600CA9DA6 /* RouteAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteAnnotation.h; sourceTree = "<group>"; };
@@ -149,6 +201,22 @@
 		A769C2C91FE103FD00816AD4 /* SearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
 		A769C2CC1FE7ACF000816AD4 /* camera02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera02.png; sourceTree = "<group>"; };
 		A769C2CE1FE7ACF700816AD4 /* camera01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera01.png; sourceTree = "<group>"; };
+		A76BEC9920E7193500474817 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		A76BEC9A20E7193500474817 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		A76BEC9B20E7193600474817 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		A76BEC9C20E7193600474817 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		A76BEC9D20E7193600474817 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		A76BEC9E20E7193600474817 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		A76BEC9F20E7193600474817 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		A76BECA020E7193600474817 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		A76BECA120E7193600474817 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		A76BECA220E7193600474817 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		A76BECA320E7193600474817 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		A772408920C68610009A5A26 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		A772409620C6D340009A5A26 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		A772409820C6D4AD009A5A26 /* AVAudioPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAudioPlayerViewController.h; sourceTree = "<group>"; };
+		A772409920C6D4AD009A5A26 /* AVAudioPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAudioPlayerViewController.m; sourceTree = "<group>"; };
+		A772409B20C773E1009A5A26 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A77676BE1FD53C50003DE9F8 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A77676BF1FD53C50003DE9F8 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
 		A77676C01FD53C50003DE9F8 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
@@ -227,6 +295,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A772409C20C773E1009A5A26 /* AVFoundation.framework in Frameworks */,
+				A772409720C6D341009A5A26 /* AVKit.framework in Frameworks */,
 				A737918020AC24FF00812D54 /* QuartzCore.framework in Frameworks */,
 				A737917D20AC24FF00812D54 /* BaiduMapAPI_Base.framework in Frameworks */,
 				A737917520AC24FF00812D54 /* OpenGLES.framework in Frameworks */,
@@ -246,6 +316,7 @@
 				A737917F20AC24FF00812D54 /* BaiduMapAPI_Location.framework in Frameworks */,
 				A737918620AC250D00812D54 /* libstdc++.6.0.9.tbd in Frameworks */,
 				A737917320AC24FF00812D54 /* libcrypto.a in Frameworks */,
+				6B9FFF5609FA2713D1856317 /* libPods-DaoYouTong.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +337,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C66B022C8EC4377FB1E7192 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				092178494820D61F33F61D70 /* Pods-DaoYouTong.debug.xcconfig */,
+				14F455F86805E4B82431DE58 /* Pods-DaoYouTong.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A71D4DE4211D73090041D998 /* CLPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A71D4DF5211D743F0041D998 /* AILoadingView.h */,
+				A71D4DFB211D74400041D998 /* AILoadingView.m */,
+				A71D4DFF211D74400041D998 /* CLGCDTimerManager.h */,
+				A71D4DF8211D743F0041D998 /* CLGCDTimerManager.m */,
+				A71D4DFD211D74400041D998 /* CLPlayerMaskView.h */,
+				A71D4DFE211D74400041D998 /* CLPlayerMaskView.m */,
+				A71D4DF9211D74400041D998 /* CLPlayerView.h */,
+				A71D4DF3211D743F0041D998 /* CLPlayerView.m */,
+				A71D4DF7211D743F0041D998 /* CLSlider.h */,
+				A71D4DFC211D74400041D998 /* CLSlider.m */,
+				A71D4DF2211D743F0041D998 /* PlayBottomToolBar.h */,
+				A71D4DF4211D743F0041D998 /* PlayBottomToolBar.m */,
+				A71D4DFA211D74400041D998 /* PlayTopToolBar.h */,
+				A71D4DF6211D743F0041D998 /* PlayTopToolBar.m */,
+				A71D4DE5211D740E0041D998 /* Category */,
+			);
+			path = CLPlayer;
+			sourceTree = "<group>";
+		};
+		A71D4DE5211D740E0041D998 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A71D4DE8211D742D0041D998 /* UINavigationController+CLPlayerRotation.h */,
+				A71D4DEA211D742D0041D998 /* UINavigationController+CLPlayerRotation.m */,
+				A71D4DE9211D742D0041D998 /* UITabBarController+CLPlayerRotation.h */,
+				A71D4DEB211D742D0041D998 /* UITabBarController+CLPlayerRotation.m */,
+				A71D4DEC211D742D0041D998 /* UIView+CLSetRect.h */,
+				A71D4DE6211D742D0041D998 /* UIView+CLSetRect.m */,
+				A71D4DED211D742D0041D998 /* UIViewController+CLPlayerRotation.h */,
+				A71D4DE7211D742D0041D998 /* UIViewController+CLPlayerRotation.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		A71D4E09211D91D60041D998 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		A71FC99A1FDBD78F00DEB4FD /* ViewExt */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +402,8 @@
 		A737905820AC0A7200812D54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A772409B20C773E1009A5A26 /* AVFoundation.framework */,
+				A772409620C6D340009A5A26 /* AVKit.framework */,
 				A737916920AC24FD00812D54 /* BaiduMapAPI_Base.framework */,
 				A737916B20AC24FE00812D54 /* BaiduMapAPI_Location.framework */,
 				A737916720AC24FD00812D54 /* BaiduMapAPI_Map.framework */,
@@ -297,6 +423,7 @@
 				A737916620AC24FD00812D54 /* Security.framework */,
 				A737916E20AC24FE00812D54 /* SystemConfiguration.framework */,
 				A737916320AC24FC00812D54 /* UIKit.framework */,
+				48E2AA0D81BE9F21BB426A4B /* libPods-DaoYouTong.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -304,13 +431,35 @@
 		A737918720AC7C8F00812D54 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				A739980220C3CD90000787F4 /* AudioAndVideo */,
 				A73DF0BB20AFFBA900CA9DA6 /* MapViewController.h */,
 				A73DF0BC20AFFBA900CA9DA6 /* MapViewController.m */,
+				A73997FF20C18F25000787F4 /* AddressAnnotation.h */,
+				A739980020C18F25000787F4 /* AddressAnnotation.m */,
 				A73DF0C220B3F47B00CA9DA6 /* PromptInfo */,
 				A73DF0C120B3F45300CA9DA6 /* Custom */,
 				A78F630620BA597800F0A279 /* JSONKit */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		A739980220C3CD90000787F4 /* AudioAndVideo */ = {
+			isa = PBXGroup;
+			children = (
+				A71D4E09211D91D60041D998 /* Video */,
+				A739980320C4D807000787F4 /* Audio */,
+			);
+			path = AudioAndVideo;
+			sourceTree = "<group>";
+		};
+		A739980320C4D807000787F4 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				A772409820C6D4AD009A5A26 /* AVAudioPlayerViewController.h */,
+				A772409920C6D4AD009A5A26 /* AVAudioPlayerViewController.m */,
+				A772407A20C61B7B009A5A26 /* Player */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		A73DF0C120B3F45300CA9DA6 /* Custom */ = {
@@ -362,6 +511,31 @@
 				A769C2CC1FE7ACF000816AD4 /* camera02.png */,
 			);
 			path = OtherImage;
+			sourceTree = "<group>";
+		};
+		A76BEC9820E7192000474817 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				A76BECA020E7193600474817 /* FMDatabase.h */,
+				A76BECA220E7193600474817 /* FMDatabase.m */,
+				A76BEC9E20E7193600474817 /* FMDatabaseAdditions.h */,
+				A76BECA120E7193600474817 /* FMDatabaseAdditions.m */,
+				A76BEC9A20E7193500474817 /* FMDatabasePool.h */,
+				A76BEC9D20E7193600474817 /* FMDatabasePool.m */,
+				A76BEC9F20E7193600474817 /* FMDatabaseQueue.h */,
+				A76BEC9920E7193500474817 /* FMDatabaseQueue.m */,
+				A76BECA320E7193600474817 /* FMDB.h */,
+				A76BEC9B20E7193600474817 /* FMResultSet.h */,
+				A76BEC9C20E7193600474817 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		A772407A20C61B7B009A5A26 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		A77676B41FD53C14003DE9F8 /* View */ = {
@@ -459,6 +633,8 @@
 		A77676F41FD53C69003DE9F8 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				A71D4DE4211D73090041D998 /* CLPlayer */,
+				A76BEC9820E7192000474817 /* FMDB */,
 				A77676F51FD53C69003DE9F8 /* PrefixHeader.pch */,
 				A71FC99A1FDBD78F00DEB4FD /* ViewExt */,
 				A77676F61FD53C69003DE9F8 /* ThirdFrameWorkFile */,
@@ -515,6 +691,8 @@
 		A77676FE1FD54220003DE9F8 /* ClassModel */ = {
 			isa = PBXGroup;
 			children = (
+				A71D4E0A211D96E00041D998 /* CLModel.h */,
+				A71D4E0B211D96E00041D998 /* CLModel.m */,
 			);
 			path = ClassModel;
 			sourceTree = "<group>";
@@ -646,6 +824,7 @@
 				A7D982CF1FD0DE670046CDC6 /* DaoYouTongUITests */,
 				A7D982AA1FD0DE660046CDC6 /* Products */,
 				A737905820AC0A7200812D54 /* Frameworks */,
+				7C66B022C8EC4377FB1E7192 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -676,6 +855,7 @@
 				A7D982B71FD0DE660046CDC6 /* LaunchScreen.storyboard */,
 				A7D982BA1FD0DE660046CDC6 /* Info.plist */,
 				A7D982BB1FD0DE660046CDC6 /* main.m */,
+				A772408920C68610009A5A26 /* music.mp3 */,
 			);
 			path = DaoYouTong;
 			sourceTree = "<group>";
@@ -705,6 +885,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D982D51FD0DE670046CDC6 /* Build configuration list for PBXNativeTarget "DaoYouTong" */;
 			buildPhases = (
+				5C6CB1E3E8027AF4675422CF /* [CP] Check Pods Manifest.lock */,
 				A7D982A51FD0DE660046CDC6 /* Sources */,
 				A7D982A61FD0DE660046CDC6 /* Frameworks */,
 				A7D982A71FD0DE660046CDC6 /* Resources */,
@@ -828,6 +1009,7 @@
 				A7D982B91FD0DE660046CDC6 /* LaunchScreen.storyboard in Resources */,
 				A77676EB1FD53C59003DE9F8 /* Home_check.png in Resources */,
 				A7D982B61FD0DE660046CDC6 /* Assets.xcassets in Resources */,
+				A772408A20C68610009A5A26 /* music.mp3 in Resources */,
 				A77676ED1FD53C59003DE9F8 /* My_check.png in Resources */,
 				A7D982B41FD0DE660046CDC6 /* Main.storyboard in Resources */,
 				A77676E71FD53C59003DE9F8 /* My_uncheck@2x.png in Resources */,
@@ -852,40 +1034,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C6CB1E3E8027AF4675422CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DaoYouTong-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7D982A51FD0DE660046CDC6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71D4E02211D74400041D998 /* PlayTopToolBar.m in Sources */,
 				A78F630920BA597800F0A279 /* JSONKit.m in Sources */,
 				A73DF0C020B3F44700CA9DA6 /* RouteAnnotation.mm in Sources */,
+				A71D4DF0211D742E0041D998 /* UINavigationController+CLPlayerRotation.m in Sources */,
 				A71FC99D1FDBD7B500DEB4FD /* UIViewExt.m in Sources */,
+				A76BECA820E7193600474817 /* FMDatabase.m in Sources */,
+				A71D4DF1211D742E0041D998 /* UITabBarController+CLPlayerRotation.m in Sources */,
 				A7CDBE052052F19000182422 /* HmacSha1Tool.m in Sources */,
 				A77676D01FD53C50003DE9F8 /* MyViewController.m in Sources */,
 				A7BD86F21FEF90B900EBE193 /* GuidesTableViewCell.m in Sources */,
 				A7D982B11FD0DE660046CDC6 /* ViewController.m in Sources */,
+				A71D4E00211D74400041D998 /* CLPlayerView.m in Sources */,
+				A71D4DEE211D742E0041D998 /* UIView+CLSetRect.m in Sources */,
 				A769C2CA1FE103FD00816AD4 /* SearchView.m in Sources */,
 				A7BD86E91FEE90E900EBE193 /* BaseTableViewCell.m in Sources */,
+				A71D4E03211D74400041D998 /* CLGCDTimerManager.m in Sources */,
 				A77676CF1FD53C50003DE9F8 /* DetailsViewController.m in Sources */,
 				A7BCF7AD1FDA80930059BECB /* WeatherView.m in Sources */,
 				A73DF0D020B4124900CA9DA6 /* CustomOverlayView.mm in Sources */,
+				A71D4DEF211D742E0041D998 /* UIViewController+CLPlayerRotation.m in Sources */,
+				A71D4E0C211D96E00041D998 /* CLModel.m in Sources */,
 				A77676CC1FD53C50003DE9F8 /* BaseTabBarController.m in Sources */,
+				A71D4E06211D74400041D998 /* CLPlayerMaskView.m in Sources */,
 				A77676CB1FD53C50003DE9F8 /* BaseViewController.m in Sources */,
 				A73DF0CF20B4124900CA9DA6 /* MyAnimatedAnnotationView.m in Sources */,
 				A77676CD1FD53C50003DE9F8 /* NewsViewController.m in Sources */,
 				A73DF0C520B3F4A500CA9DA6 /* PromptInfo.m in Sources */,
+				A71D4E05211D74400041D998 /* CLSlider.m in Sources */,
 				A7BD86EC1FEE922500EBE193 /* BaseTableViewController.m in Sources */,
 				A73DF0D120B4124900CA9DA6 /* CustomOverlay.mm in Sources */,
+				A76BECA720E7193600474817 /* FMDatabaseAdditions.m in Sources */,
+				A739980120C18F25000787F4 /* AddressAnnotation.m in Sources */,
 				A7BD86E61FE90B3C00EBE193 /* FunctionalKeysView.m in Sources */,
 				A7D982BC1FD0DE660046CDC6 /* main.m in Sources */,
 				A77676CE1FD53C50003DE9F8 /* HomeViewController.m in Sources */,
 				A73DF0C820B3F4DE00CA9DA6 /* UIImage+Rotate.m in Sources */,
 				A7BD86EF1FEF8D2700EBE193 /* GuidesTableViewController.m in Sources */,
+				A76BECA420E7193600474817 /* FMDatabaseQueue.m in Sources */,
+				A772409A20C6D4AD009A5A26 /* AVAudioPlayerViewController.m in Sources */,
 				A737905720A8270100812D54 /* FunctionKeysCollectionViewCell.m in Sources */,
 				A7D982AE1FD0DE660046CDC6 /* AppDelegate.mm in Sources */,
+				A71D4E01211D74400041D998 /* PlayBottomToolBar.m in Sources */,
 				A77676F91FD53C69003DE9F8 /* UIColor+ColorChange.m in Sources */,
+				A76BECA520E7193600474817 /* FMResultSet.m in Sources */,
 				A77677101FD54B48003DE9F8 /* BaseView.m in Sources */,
 				A73DF0BD20AFFBA900CA9DA6 /* MapViewController.m in Sources */,
+				A76BECA620E7193600474817 /* FMDatabasePool.m in Sources */,
+				A71D4E04211D74400041D998 /* AILoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1048,6 +1270,7 @@
 		};
 		A7D982D61FD0DE670046CDC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 092178494820D61F33F61D70 /* Pods-DaoYouTong.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1068,11 +1291,18 @@
 				INFOPLIST_FILE = DaoYouTong/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"SDWebImage\"",
+					"-l\"Masonry\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"UIKit\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DaoYouTong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1082,6 +1312,7 @@
 		};
 		A7D982D71FD0DE670046CDC6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14F455F86805E4B82431DE58 /* Pods-DaoYouTong.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1102,11 +1333,18 @@
 				INFOPLIST_FILE = DaoYouTong/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"SDWebImage\"",
+					"-l\"Masonry\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"UIKit\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DaoYouTong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -7,12 +7,23 @@
 //
 
 #import "MapViewController.h"
-
+#import "AVAudioPlayerViewController.h"//音频：本地音乐
 
 
 #import "RouteAnnotation.h"//路段节点
 #import "PromptInfo.h"//提示窗口
+#import "AddressAnnotation.h"//地址信息
+#import "FMDatabase.h"//建立数据库
+//-------------添加视频区-------------
+#ifndef __OPTIMIZE__
+#define NSLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
+#endif
 
+#import "CLPlayerView.h"
+#import "CLModel.h"
+#import "UIView+CLSetRect.h"
+#import "UIImageView+WebCache.h"
+#import "Masonry.h"
 
 @interface MapViewController ()
 {
@@ -25,8 +36,14 @@
     NSMutableArray * _overLaysArray;//自定义步行的 绘制路段数组
     BMKWalkingRoutePlanOption *walkingRouteSearchOption2;
     int _number;//判断路段绘制次数
+    FMDatabase * fmdb;//fmdb 数据库
+    
 }
+@property(nonatomic,strong) AVAudioPlayer * player;
+@property(nonatomic,assign) BOOL isPlaying;
 
+/**CLplayer*/
+@property (nonatomic, strong) CLPlayerView * playerView;
 @end
 
 @implementation MapViewController
@@ -66,17 +83,193 @@
     [self addAudiondVideoView];
     //2 添加地图区
     [self addBaiDuMapView];
+//    //3 下载文件
+//    NSString *fileDownLoadURL =@"http://192.168.0.101:8080/FileUploadAndDownload01/upload/test.mp4";
+//    NSString * fileDownLoadFileName = [self DownloadTextFile:fileDownLoadURL];
+//    NSLog(@"快照下载文件名is %@  ",fileDownLoadFileName);
+    
+}
+// 下载 文件
+-(NSString*)DownloadTextFile:(NSString*)fileUrl
+{
+    NSArray *caches = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * lastString  = [fileUrl lastPathComponent];
+    NSString *filePath = [[caches objectAtIndex:0] stringByAppendingPathComponent:lastString];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSLog(@" filePath is %@",filePath);
+
+    //如果已经存在该路径
+    if ([fileManager fileExistsAtPath:filePath])
+    {
+        
+        NSLog(@"下载成功，提示弹框！已经存在");
+        //使用异步线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"下载成功！" preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:alertController animated:YES completion:nil];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [ alertController dismissViewControllerAnimated:YES completion:nil];
+            });
+        });
+        return filePath;
+    }else
+    {
+
+//        fileUrl = [fileUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        fileUrl = [fileUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        //  例：      fileUrl = @"http://120.55.160.212:80/CloudPrint/isecstar/scandir20160429/006FEAA9-CA95-4BD6-A15F-B3366BB8129F.jpg.gz";
+        NSURL *fileURL = [NSURL URLWithString:fileUrl];
+        NSLog(@" snapshotURL is %@",fileURL);
+        NSData *data = [NSData dataWithContentsOfURL:fileURL];
+        NSLog(@"  数据是%@",data);
+        [data writeToFile:filePath atomically:YES];//将NSData类型对象data写入文件，文件名为FilePath
+        NSLog(@"下载成功，提示弹框！");
+        //使用异步线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"下载成功！" preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:alertController animated:YES completion:nil];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [ alertController dismissViewControllerAnimated:YES completion:nil];
+            });
+        });
+        [self creatSQL:filePath];
+        //使用异步线程 传入文件路径
+        //        dispatch_async(dispatch_get_main_queue(), ^{
+        //           [self creatSQL:filePath];
+        //        });
+        
+        return filePath;
+    }
+    
+}
+//创建数据库
+-(void)creatSQL:(NSString *)snapshotURL
+{
+    //    NSUserDomainMask = 1,       // user's home directory --- place to install user's personal items (~)
+    
+    //1.创建存储路径          /域中目录的搜索路径/                 /NS文件目录/          /用户域掩码/
+    NSArray * paths =  NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * documents  = [paths objectAtIndex:0];
+    //通过添加路径组件串/
+    NSString * database_path  = [documents stringByAppendingPathComponent:@"FileInfo.sqlite"];
+    //2.创建sql3管理的数据库
+    fmdb = [FMDatabase databaseWithPath:database_path];
+    //3.使用如下语句，如果打开失败，可能是权限不足或者资源不足。通常打开完操作操作后，需要调用 close 方法来关闭数据库。在和数据库交互 之前，数据库必须是打开的。如果资源或权限不足无法打开或创建数据库，都会导致打开失败。
+    if ([fmdb open]) {
+        //4.创建表
+        BOOL result = [fmdb executeUpdate:@"CREATE TABLE IF NOT EXISTS SNAPSHOTINFO (ID INTEGER PRIMARY KEY AUTOINCREMENT, url TEXT);"];
+        
+        if (result) {
+            NSLog(@"创建表成功！");
+            //5.插入数据
+            NSString * str1 = [NSString stringWithFormat:@"INSERT INTO '%@' ('%@') VALUES ('%@')",@"SNAPSHOTINFO", @"url", snapshotURL];
+            BOOL instertResult  = [fmdb executeUpdate:str1];
+            if (!instertResult) {
+                NSLog(@"error when insert db table");
+            }else{
+                NSLog(@"success to insert db table");
+            }
+        }else{
+            NSLog(@"建表失败！");
+        }
+        
+        [fmdb close];
+    }else{
+        
+        NSLog(@"数据库打开失败！");
+    }
     
 }
 //1添加音视频区
 -(void)addAudiondVideoView
 {
     _avHeight  = kViewWidth*9/16+20;
+    
+//    AVAudioPlayerViewController * avAudioVC  = [[AVAudioPlayerViewController alloc]init];
+//    avAudioVC.view.frame = CGRectMake(0, 0, kViewWidth, _avHeight);
+    
     UIView * AVideoV  =[[UIView alloc]initWithFrame:CGRectMake(0, 0, kViewWidth, _avHeight)];
-    AVideoV.backgroundColor = [UIColor blackColor];
+    AVideoV.backgroundColor = [UIColor whiteColor];
+    self.view.userInteractionEnabled = YES;
     [self.view addSubview:AVideoV];
     
+    //一 ：加载音乐区
+    //加载本地音乐
+    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"music" withExtension:@"mp3"];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileUrl error:nil];
     
+    if (self.player) {
+        [self.player prepareToPlay];
+    }
+    
+    UIButton * playerBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 150, 200, 50)];
+    playerBtn.backgroundColor = [UIColor blackColor];
+    //    button.center = self.view.center;
+    [playerBtn setTitle:@"播放本地音乐" forState:UIControlStateNormal];
+    [playerBtn setTitle:@"暂停" forState:UIControlStateSelected];
+    [playerBtn setTitleColor:[UIColor grayColor] forState:0];
+    [playerBtn  addTarget:self action:@selector(clickPlay:) forControlEvents:UIControlEventTouchUpInside];
+    self.view.userInteractionEnabled = YES;//点击响应打开
+    
+    self.player.volume = 0.5;
+    self.player.pan = -1;
+    self.player.numberOfLoops = -1;
+    self.player.rate = 0.5;
+    
+//    [AVideoV addSubview:playerBtn];
+    //二：加载视频区
+     [_playerView destroyPlayer];
+    if (_playerView == nil) {
+        _playerView = [[CLPlayerView alloc] initWithFrame:CGRectMake(0, 60, kViewWidth,_avHeight)];
+    }
+    [AVideoV addSubview: _playerView];
+    //    //重复播放，默认不播放
+    //    _playerView.repeatPlay = YES;
+    //    //当前控制器是否支持旋转，当前页面支持旋转的时候需要设置，告知播放器
+    //    _playerView.isLandscape = YES;
+    //    //设置等比例全屏拉伸，多余部分会被剪切
+    //    _playerView.fillMode = ResizeAspectFill;
+    //设置进度条背景颜色
+    _playerView.progressBackgroundColor = [UIColor colorWithRed:53 / 255.0 green:53 / 255.0 blue:65 / 255.0 alpha:1];
+    //设置进度条缓冲颜色
+    _playerView.progressBufferColor = [UIColor grayColor];
+    //设置进度条播放完成颜色
+    _playerView.progressPlayFinishColor = [UIColor whiteColor];
+    //    //全屏是否隐藏状态栏
+    //    _playerView.fullStatusBarHidden = NO;
+    //    //转子颜色
+    //    _playerView.strokeColor = [UIColor redColor];
+    //视频地址
+    _playerView.url = [NSURL URLWithString:@"http://192.168.0.100:8080/FileUploadAndDownload01/upload/02.mov"];
+    //播放
+    [_playerView playVideo];
+    //返回按钮点击事件回调
+    [_playerView destroyPlay:^{
+        NSLog(@"播放器被销毁了");
+    }];
+    [_playerView backButton:^(UIButton *button) {
+        NSLog(@"返回按钮被点击");
+    }];
+    //播放完成回调
+    [_playerView endPlay:^{
+        //销毁播放器
+        [_playerView destroyPlayer];
+        _playerView = nil;
+        NSLog(@"播放完成");
+    }];
+    
+}
+- (void)clickPlay:(UIButton*)button{
+    
+    if(!self.isPlaying){
+        [self.player play];
+        button.selected = YES;
+        self.isPlaying = YES;
+    }else{
+        [self.player stop];
+        button.selected = NO;
+        self.isPlaying = NO;
+    }
     
 }
 //---------------------------2添加地图区---------------------------
@@ -131,11 +324,23 @@
     [_addressArray addObject:point2];
 
     //地址名称数组
+    AddressAnnotation * addressAnnotation1  = [[AddressAnnotation alloc]init];
+    addressAnnotation1.addressName = @"景点1";
+    addressAnnotation1.directionInt = 1;
+    AddressAnnotation * addressAnnotation2  = [[AddressAnnotation alloc]init];
+    addressAnnotation2.addressName = @"景点2";
+    addressAnnotation2.directionInt = 1;
+    AddressAnnotation * addressAnnotation3  = [[AddressAnnotation alloc]init];
+    addressAnnotation3.addressName = @"景点3";
+    addressAnnotation3.directionInt = 1;
+    AddressAnnotation * addressAnnotation4  = [[AddressAnnotation alloc]init];
+    addressAnnotation4.addressName = @"景点4";
+    addressAnnotation4.directionInt = 2;
     _addressNameArray = [[NSMutableArray alloc]init];
-    [_addressNameArray addObject:@"景点1"];
-    [_addressNameArray addObject:@"景点2"];
-    [_addressNameArray addObject:@"景点3"];
-    [_addressNameArray addObject:@"景点4"];
+    [_addressNameArray addObject:addressAnnotation1];
+    [_addressNameArray addObject:addressAnnotation2];
+    [_addressNameArray addObject:addressAnnotation3];
+    [_addressNameArray addObject:addressAnnotation4];
     //检索方法
     [self delayMethod:walkingRouteSearchOption1];
 }
@@ -300,38 +505,18 @@
 //    }
     return nil;
 }
+//(景点点击事件)
 - (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view
 {
     
-    NSLog(@"选中标注！");
+    NSLog(@"选中景点标注！");
 }
-
-//生成图片
--(UIImage *)createTextImage:(NSString*)text
+- (void)mapView:(BMKMapView *)mapView didDeselectAnnotationView:(BMKAnnotationView *)view
 {
-    UILabel *temptext  = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 40, 25)];
-    temptext.text = text;
-    temptext.font = [UIFont systemFontOfSize:12];
-    temptext.textColor = [UIColor blackColor];
-    temptext.textAlignment = NSTextAlignmentCenter;
-    temptext.backgroundColor = [UIColor greenColor];
-    UIImage *image  = [self imageForView:temptext];//根据文字画图
-    return  image;
+    NSLog(@"取消选中景点标注！");
     
 }
-- (UIImage *)imageForView:(UIView *)view
-{
-    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, 0);
-    
-    if ([view respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)])
-        [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
-    else
-        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
-}
-// 当点击annotation view弹出的泡泡时，调用此接口
+// 当点击annotation view弹出的泡泡时，调用此接口(泡泡点击事件)
 - (void)mapView:(BMKMapView *)mapView annotationViewForBubble:(BMKAnnotationView *)view;
 {
     NSLog(@"paopaoclick");
@@ -380,10 +565,6 @@
     //提示窗
     [PromptInfo showText:@"输入的起终点有歧义，取返回poilist其他点重新发起检索"];
 }
-
-
-
-
 
 
 
